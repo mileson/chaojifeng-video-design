@@ -324,7 +324,9 @@ Agent 会根据已有项目和工具选择实现方式。此仓库包含创作�
 
 [可编辑流程定义](assets/diagrams/music-event-model.mmd) · [矢量图](assets/diagrams/music-event-model.svg)
 
-短段预演和必要返修由 Agent 内部完成；选择直接成片时连续推进，只有你要求分阶段审阅，才在约定节点等待。六层判断详见 [声画事件模型](references/music-event-model.md)。
+音乐视频默认以代码构建可动主体与场景，让前后景、镜头、动作、转场和字幕由同一音乐排程组织。图片可作为背景、纹理或局部素材；明确要求静态图片作品或其他形式时按你的要求制作。
+
+短段预演覆盖前三秒与关键音乐落点，检查动作、运镜、转场和字幕是否实际发生；未兑现先返修。预演和返修由 Agent 内部完成；选择直接成片时连续推进，只有你要求分阶段审阅，才在约定节点等待。六层判断详见 [声画事件模型](references/music-event-model.md)，具体执行见 [音乐镜头与运动编排](references/music-shot-choreography.md)。
 
 ### 音乐在三个层级带动画面
 
