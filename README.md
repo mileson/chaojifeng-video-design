@@ -396,21 +396,22 @@ Agent 会根据已有项目和工具选择实现方式。此仓库包含创作�
 ## 音频能力按需准备
 
 <details>
-<summary>展开 Whisper、ACE-Step、HTDemucs 的检测与安装流程</summary>
+<summary>展开 Qwen3-TTS、Whisper、ACE-Step、HTDemucs 的检测与安装流程</summary>
 
-有可信歌词和时间稿时直接复用。缺少能力时，Agent 先检查已有环境、模型缓存与硬件资源，再按任务选择入口；无需把三个工具全部安装。
+已有可用旁白、可信歌词和时间稿时直接复用。需要生成配音或缺少其他音频能力时，Agent 先检查已有环境、模型缓存与硬件资源，再按任务选择入口；四个入口独立，只补所需组件。
 
-![Whisper、ACE-Step 与 HTDemucs 按需检测安装流程](assets/diagrams/audio-capability-setup.svg)
+![Qwen3-TTS、Whisper、ACE-Step 与 HTDemucs 按需检测安装流程](assets/diagrams/audio-capability-setup.svg)
 
 [可编辑流程定义](assets/diagrams/audio-capability-setup.mmd) · [矢量图](assets/diagrams/audio-capability-setup.svg)
 
 | 能力 | 用途 | 入口与运行边界 |
 | --- | --- | --- |
+| Qwen3-TTS Base | 产品、知识、资讯、故事等参考音色旁白 | [配音接入指南](references/qwen3-tts-narration.md)；Apple Silicon 的 MLX 4bit 模型约 2.34 GB，官方版约 4.54 GB，按平台选一个；音色配置与模型分开 |
 | OpenAI Whisper | 歌词转写与时间戳候选 | [官方安装](https://github.com/openai/whisper#setup)；包名 `openai-whisper`，需要 FFmpeg，识别结果须校对 |
 | ACE-Step 1.5 | 音乐理解、歌词与音乐信息提取，按需生成 | [官方中文指南](https://github.com/ace-step/ACE-Step-1.5/blob/main/docs/zh/INSTALL.md)；按具体功能检测，音乐理解不等于原曲词级对齐 |
 | HTDemucs | 混合歌曲的人声与伴奏分离 | [官方仓库](https://github.com/facebookresearch/demucs)；它是 Demucs 的模型，分离本身不产生歌词，也不保证识别更准 |
 
-检测阶段不通过启动服务或加载缺失权重触发下载。发现缺项后说明所需组件与资源，按授权安装并验证；原曲保持不变。逐项检测、安装与失败处理见 [音频能力指南](references/audio-capability-setup.md)。
+检测阶段不通过启动服务或加载缺失权重触发下载。发现缺项后说明来源、容量与资源，由 Agent 在任务授权内下载、安装并短样验证，复用已完成下载。配音语速按音色校准，变更后重新量时并安排字幕和镜头。模型大小为 2026-10-29 核对值，不含 Python 等环境依赖。逐项检测、安装与失败处理见 [音频能力指南](references/audio-capability-setup.md)。
 
 </details>
 

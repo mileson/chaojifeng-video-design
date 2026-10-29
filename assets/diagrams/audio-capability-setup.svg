@@ -1,26 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="895" viewBox="0 0 960 895" role="img" aria-labelledby="title desc"><title id="title">音频能力按需准备</title><desc id="desc">按任务选择 Whisper、ACE-Step 或 HTDemucs，先静态检查已有资源，再按授权补齐缺项、短样验证、校对与时间映射。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="895" viewBox="0 0 960 895" role="img" aria-labelledby="title desc"><title id="title">音频能力按需准备</title><desc id="desc">按任务选择 Qwen3-TTS、Whisper、ACE-Step 或 HTDemucs，先静态检查已有资源，再按授权补齐缺项、短样验证、校对与时间映射。</desc>
 <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#62748B"/></marker></defs>
 <rect width="960" height="895" rx="24" fill="#F8FAFC"/>
 <g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
 <text x="40" y="55" font-size="32" font-weight="700" fill="#0F172A" text-anchor="start">先判断需要，再准备能力</text>
-<text x="40" y="91" font-size="21" font-weight="400" fill="#334155" text-anchor="start">三个独立入口 · 无需全部安装 · 检测不触发模型下载</text>
-<rect x="40" y="130" width="260" height="94" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
-<text x="62" y="164" font-size="24" font-weight="600" fill="#172554" text-anchor="start">歌词转写</text>
-<text x="62" y="195" font-size="20" font-weight="400" fill="#334155" text-anchor="start">OpenAI Whisper</text>
-<path d="M170 224 V260" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="350" y="130" width="260" height="94" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
-<text x="372" y="164" font-size="24" font-weight="600" fill="#172554" text-anchor="start">音乐理解 / 生成</text>
-<text x="372" y="195" font-size="20" font-weight="400" fill="#334155" text-anchor="start">ACE-Step 1.5</text>
-<path d="M480 224 V260" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
-<rect x="660" y="130" width="260" height="94" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
-<text x="682" y="164" font-size="24" font-weight="600" fill="#172554" text-anchor="start">伴奏干扰识别</text>
-<text x="682" y="195" font-size="20" font-weight="400" fill="#334155" text-anchor="start">HTDemucs 可选分离</text>
-<path d="M790 224 V260" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
-<path d="M170 260 H790" fill="none" stroke="#62748B" stroke-width="2"/>
+<text x="40" y="91" font-size="21" font-weight="400" fill="#334155" text-anchor="start">四个独立入口 · 无需全部安装 · 检测不触发模型下载</text>
+<rect x="40" y="130" width="205" height="94" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
+<text x="56" y="164" font-size="21" font-weight="600" fill="#172554">参考音色旁白</text>
+<text x="56" y="195" font-size="18" fill="#334155">Qwen3-TTS Base</text>
+<path d="M142.5 224 V260" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="265" y="130" width="205" height="94" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
+<text x="281" y="164" font-size="21" font-weight="600" fill="#172554">歌词转写</text>
+<text x="281" y="195" font-size="18" fill="#334155">OpenAI Whisper</text>
+<path d="M367.5 224 V260" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="490" y="130" width="205" height="94" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
+<text x="506" y="164" font-size="21" font-weight="600" fill="#172554">音乐理解 / 生成</text>
+<text x="506" y="195" font-size="18" fill="#334155">ACE-Step 1.5</text>
+<path d="M592.5 224 V260" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="715" y="130" width="205" height="94" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
+<text x="731" y="164" font-size="21" font-weight="600" fill="#172554">伴奏干扰识别</text>
+<text x="731" y="195" font-size="18" fill="#334155">HTDemucs 可选分离</text>
+<path d="M817.5 224 V260" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M142.5 260 H817.5" fill="none" stroke="#62748B" stroke-width="2"/>
 <path d="M480 260 V294" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="160" y="306" width="640" height="82" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
 <text x="182" y="340" font-size="24" font-weight="600" fill="#172554" text-anchor="start">检查环境、模型缓存与硬件资源</text>
-<text x="182" y="371" font-size="20" font-weight="400" fill="#334155" text-anchor="start">有可信歌词和时间稿时，直接复用</text>
+<text x="182" y="371" font-size="20" font-weight="400" fill="#334155" text-anchor="start">已有旁白、歌词和时间稿时，直接复用</text>
 <path d="M320 388 V440" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
 <path d="M640 388 V440" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="40" y="452" width="410" height="82" rx="14" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
@@ -28,7 +32,7 @@
 <text x="62" y="517" font-size="20" font-weight="400" fill="#334155" text-anchor="start">复用现有环境与模型</text>
 <rect x="510" y="452" width="410" height="82" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
 <text x="532" y="486" font-size="24" font-weight="600" fill="#172554" text-anchor="start">确有缺项</text>
-<text x="532" y="517" font-size="20" font-weight="400" fill="#334155" text-anchor="start">官方入口 · 按授权补齐所需组件</text>
+<text x="532" y="517" font-size="20" font-weight="400" fill="#334155" text-anchor="start">核来源与容量 · Agent 按授权下载</text>
 <path d="M245 534 V575 H480 V600" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
 <path d="M715 534 V575 H480" fill="none" stroke="#62748B" stroke-width="2"/>
 <rect x="160" y="612" width="640" height="82" rx="14" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
@@ -36,7 +40,7 @@
 <text x="182" y="677" font-size="20" font-weight="400" fill="#334155" text-anchor="start">核对对应功能是否真的可运行</text>
 <path d="M480 694 V730" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="160" y="742" width="640" height="82" rx="14" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
-<text x="182" y="776" font-size="24" font-weight="600" fill="#172554" text-anchor="start">校对结果与时间映射，再进入编排</text>
-<text x="182" y="807" font-size="20" font-weight="400" fill="#334155" text-anchor="start">保留原曲 · 区分识别候选与已核实内容</text>
+<text x="182" y="776" font-size="24" font-weight="600" fill="#172554" text-anchor="start">校对、音色与语速，再按实测时间编排</text>
+<text x="182" y="807" font-size="20" font-weight="400" fill="#334155" text-anchor="start">配音变更重新量时 · 区分候选与已核实内容</text>
 <text x="480" y="862" font-size="20" font-weight="400" fill="#475569" text-anchor="middle">失败或资源不足：记录具体阻塞，选择可用的替代路线</text>
 </g></svg>

@@ -1,17 +1,19 @@
 flowchart LR
-    A["当前任务缺什么"] --> W["歌词转写<br/>OpenAI Whisper"]
+    A["当前任务缺什么"] --> Q["参考音色旁白<br/>Qwen3-TTS Base"]
+    A --> W["歌词转写<br/>OpenAI Whisper"]
     A --> C["音乐理解或生成<br/>ACE-Step 1.5"]
     A --> D["伴奏干扰识别<br/>HTDemucs 可选分离"]
     W --> P["检查已有环境、缓存与资源"]
     C --> P
     D --> P
+    Q --> P
     P -->|条件具备| T["短样运行验证"]
-    P -->|确有缺项| I["官方入口 · 按授权补齐所需组件"]
+    P -->|确有缺项| I["核来源、容量与平台 · Agent 按授权下载"]
     I --> T
-    T --> R["校对结果 · 核对时间映射 · 进入编排"]
+    T --> R["校对、音色与语速 · 实测时间 · 进入编排"]
     classDef choose fill:#DBEAFE,stroke:#2563EB,color:#172554;
     classDef check fill:#FEF3C7,stroke:#D97706,color:#78350F;
     classDef result fill:#DCFCE7,stroke:#16A34A,color:#14532D;
-    class A,W,C,D choose;
+    class A,Q,W,C,D choose;
     class P,I,T check;
     class R result;
