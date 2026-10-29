@@ -4,6 +4,7 @@
 
 | 场景 | 观众所得与主要方法 |
 | --- | --- |
+| product-promo | 看见结果、理解价值、记住产品；读 [产品宣传视频](product-promo-direction.md)，选参考素材或模板名称入口；首尾两幕纳入必检 |
 | product-demo | 看懂真实任务、操作与结果；读 [产品表达](product-expression.md) |
 | knowledge-explainer | 理解概念、关系与过程；读 [物即解释](knowledge-visualization.md)、[行业规范](domain-standards.md)、[逐层递进](layered-reveal.md)和[知识包](knowledge-pack.md) |
 | news-brief | 分清事件、来源、日期、变化与未知；沿用知识包，额外核对时效与事实画面 |
@@ -17,6 +18,8 @@
 
 | 用户意图或制作条件 | 路由与约束 |
 | --- | --- |
+| 给参考素材制作产品宣传片 | product-promo；先读 [参考片研究](reference-film-study.md)和[产品宣传视频](product-promo-direction.md)，提炼首尾编排、主体结构与声音，按当前产品事实适配 |
+| 按“极简左右讲解”或已登记模板名称制作 | product-promo；精确查询 recipe 的名称／别名／ID，加载[极简左右讲解](../templates/product-split-explainer.md)，无需另找参考片；未知名称不静默替换 |
 | 诗词、乐器、景物与立体文字共同表达 | music-event-performance；在音乐驱动流程中补读 [诗词音乐世界](poetry-music-world.md)，按当前唱词和事件建立意象、运动映射与接触关系 |
 | 用三维对象响应音乐，主题或风格可由歌曲推导 | music-event-performance 的音乐先行分支；先读 [歌曲视觉导演](song-visual-direction.md)和[音乐镜头与运动编排](music-shot-choreography.md)，再读 [音乐驱动三维世界](music-driven-world.md)，默认连续完成；理论主题补知识表达 |
 | 概念、原理或机制需要音乐推进 | knowledge-music-explainer；读 [概念知识科普编排](knowledge-music-direction.md)，先按所选曲目的实际结构反推知识层与镜头 |

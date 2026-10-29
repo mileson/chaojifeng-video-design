@@ -80,7 +80,8 @@
     "image-story",
     "story-video",
     "brand-film",
-    "music-visual"
+    "music-visual",
+    "product-promo"
   ],
   "implementation": {
     "status": "guidance",

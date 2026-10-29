@@ -2383,6 +2383,137 @@
         "../references/sources.md#说唱科普与成品反馈"
       ],
       "source_relation": "2026-10-25用户确认从同一作品的制作及多轮返修提炼。配方与失败检查为原创归纳；同源会话不作独立成功样本，不分发私人对话、声音或工程，不继承旧片测量与接受状态。"
+    },
+    {
+      "id": "product-split-explainer",
+      "name": "极简左右讲解",
+      "aliases": [
+        "Minimal Split Explainer",
+        "极简左右结构"
+      ],
+      "intent": "用结果开场、左右讲解和证据变奏串起产品价值，以成果与产品名自然收束。",
+      "status": "guidance",
+      "tier": "完整影片模板",
+      "scenario_ids": [
+        "product-promo",
+        "product-demo"
+      ],
+      "inputs": [
+        "产品入口、平台版本和目标用户",
+        "可核实的核心价值及实际功能",
+        "已有真实界面、操作与结果素材；参考模式另给可读参考",
+        "发布用途、画幅与声音要求，可从项目补齐"
+      ],
+      "required_inputs": [
+        "产品入口、平台版本和目标用户",
+        "可核实的核心价值及实际功能",
+        "已有真实界面、操作与结果素材；参考模式另给可读参考",
+        "发布用途、画幅与声音要求，可从项目补齐"
+      ],
+      "entry_modes": [
+        {
+          "id": "reference",
+          "name": "提供参考素材",
+          "method": "拆解可读参考的首幕、主体、尾幕与声画，映射当前产品事实。"
+        },
+        {
+          "id": "template",
+          "name": "选择模板名称",
+          "method": "精确名称、别名或 ID 加载此模板，从产品项目补齐素材，无需另给参考片。"
+        }
+      ],
+      "template_path": "templates/product-split-explainer.md",
+      "method_path": "references/product-promo-direction.md",
+      "story_steps": [
+        {
+          "id": "opening-result",
+          "shot_purpose": "让观众先看见产品能带来的结果",
+          "visual_action": "完成作品或核心成果先出现，再引出产品名称与一句价值；明确参考需要时可采用品牌图形与承诺开场。",
+          "sound_role": "旁白自然引入价值，音乐建立轻量情绪。",
+          "checks": [
+            "首帧可辨，前三秒有所得；开场承诺在主体兑现。"
+          ]
+        },
+        {
+          "id": "value-proof",
+          "shot_purpose": "逐段讲清并证明一项价值",
+          "visual_action": "左侧短标题与价值，右侧实际界面或作品，沿同一任务展示输入、操作、变化及结果。",
+          "sound_role": "连贯旁白解释价值，音乐适度降低，字幕跟随实际声音。",
+          "checks": [
+            "操作与旁白一致，关键终态有稳定阅读窗。"
+          ]
+        },
+        {
+          "id": "evidence-variation",
+          "shot_purpose": "让细节与差异看得清",
+          "visual_action": "必要时全屏成果、操作近景、前后对比或多图组合，再接回主结构或下一章。",
+          "sound_role": "随语义与真实动作承接，不用无关音效遮住讲解。",
+          "checks": [
+            "变奏服务当前证据，不强迫每幕左文右机；同一作品连续。"
+          ]
+        },
+        {
+          "id": "brand-close",
+          "shot_purpose": "回收成果与产品记忆",
+          "visual_action": "回到完成作品或核心成果，产品名与自然品牌句落定；明确转化目标时才加入已核实入口。",
+          "sound_role": "完整尾句、尾音和自然淡出。",
+          "checks": [
+            "回应开场，画面停留足够；不截断最后发声或突然黑屏。"
+          ]
+        }
+      ],
+      "expression_ids": [
+        "narrative.output-as-proof",
+        "narrative.goal-proof",
+        "camera.focus-frame",
+        "visual.target-callout",
+        "text.read-then-move",
+        "sound.attention-mix",
+        "production.dwell-budget"
+      ],
+      "motion_ids": [
+        "reveal",
+        "highlight",
+        "state-swap",
+        "camera-focus",
+        "hold"
+      ],
+      "style_ids": [
+        "product-minimal"
+      ],
+      "constraints": [
+        "首幕与尾幕是必选段落，中段左右结构可按证据切全屏、近景、对比或多图。",
+        "白或近白底、粗标题、少量品牌色、底部固定字幕；画幅变化优先保证阅读。",
+        "旁白讲价值，画面证明；按真实音频排时，不绑定产品、时长、曲目或配音引擎。",
+        "某个工具失败不静默删去必需的人声、音乐或镜头。"
+      ],
+      "fallback": "复用已有真实素材与可用制作能力，缩小到能证明的价值；必要能力缺失如实记录，未完成不宣称成片通过。",
+      "verification_questions": [
+        "首幕是否建立具体结果并引出产品？",
+        "每项价值是否有清晰操作和可见结果？",
+        "左右结构与必要变奏是否服务证据？",
+        "结尾是否回到成果与产品名，并完整保留声音？"
+      ],
+      "verification": {
+        "design": {
+          "status": "authored",
+          "evidence": []
+        },
+        "preview": {
+          "status": "not_run",
+          "evidence": []
+        },
+        "exported": {
+          "status": "not_run",
+          "evidence": []
+        }
+      },
+      "source_refs": [
+        "references/product-promo-direction.md",
+        "templates/product-split-explainer.md",
+        "references/sources.md"
+      ],
+      "source_relation": "依据用户提供的产品宣传创作对话、参考片和迭代结果观察，按 2026-10-29 用户确认提炼；不分发私有原始素材，不将抽帧或来源成片状态视为本模板已渲染或跨产品验证。"
     }
   ]
 }

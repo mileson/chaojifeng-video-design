@@ -20,10 +20,12 @@ def main():
     try:
         entries = catalog(args.kind, args.catalog_dir, style_roots=args.style_root)
         if args.action == "get":
-            if args.kind == "style" and args.id not in entries and isinstance(args.id, str):
+            if args.kind in {"style", "recipe"} and args.id not in entries and isinstance(args.id, str):
                 matches = [k for k,v in entries.items() if args.id.strip().casefold() in {s.casefold() for s in [v['name'], *v.get('aliases',[])]}]
                 if len(matches) == 1:
                     args.id = matches[0]
+                elif len(matches) > 1:
+                    raise ValueError("ambiguous name; use an ID: " + ", ".join(matches))
             if args.id not in entries:
                 raise ValueError("unknown or missing ID: " + str(args.id))
             result = dict(schema_version=1, kind=args.kind, item=entries[args.id])

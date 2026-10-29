@@ -10,6 +10,8 @@ python3 SKILL_ROOT/scripts/catalog.py --kind expression list --scenario brand-fi
 python3 SKILL_ROOT/scripts/catalog.py --kind expression get visual.target-callout
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe list --scenario music-visual
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe get product-task-proof
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe list --scenario product-promo
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 极简左右讲解 --json
 python3 SKILL_ROOT/scripts/production_tools.py list --task environment
 python3 SKILL_ROOT/scripts/production_tools.py probe
 python3 SKILL_ROOT/scripts/production_tools.py polyhaven-search --query studio --type hdris --limit 5 --cache-dir /project/video/cache/polyhaven
@@ -30,3 +32,7 @@ python3 SKILL_ROOT/scripts/explainer_timing_audit.py /project/video/knowledge-mu
 ## 音乐、主题与风格
 
 `music_world.py init --music FILE --theme THEME --style 水墨|烟雨|理论概念 --into PROJECT` 创建不覆盖的项目，`analyse --project PROJECT` 保存候选分析并保留已编排事件，`validate --project PROJECT` 检查当前音轨身份和事件阶段。完整方法、路线与继续制作见 [音乐驱动三维世界](music-driven-world.md)。
+
+## 产品宣传模板
+
+`recipe get` 支持稳定 ID、精确中文名称和登记别名；英文忽略大小写，前后空白忽略。名称冲突时返回候选 ID，未知名称报错，不做模糊套用。`product-promo` 下首个模板为“极简左右讲解”（`product-split-explainer`）；加载返回的模板与方法路径，再开始制作。

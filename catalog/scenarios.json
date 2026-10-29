@@ -82,7 +82,8 @@
         "sensory-before-after",
         "launch-film-arc",
         "feature-chapter-reel",
-        "product-music-story"
+        "product-music-story",
+        "product-split-explainer"
       ],
       "expression_ids": [
         "narrative.shared-subject",
@@ -808,6 +809,93 @@
         "style.token-contract",
         "production.time-function",
         "production.capability-fallback"
+      ]
+    },
+    {
+      "id": "product-promo",
+      "name": "产品宣传视频",
+      "intent": "让目标用户看见产品带来的结果、理解关键价值并记住产品。",
+      "applicable_inputs": [
+        "产品入口、平台版本和目标用户",
+        "可核实的核心价值及实际功能",
+        "已有真实界面、操作与结果素材；参考模式另给可读参考",
+        "发布用途、画幅与声音要求，可从项目补齐"
+      ],
+      "required_inputs": [
+        "产品入口、平台版本和目标用户",
+        "可核实的核心价值及实际功能",
+        "已有真实界面、操作与结果素材；参考模式另给可读参考",
+        "发布用途、画幅与声音要求，可从项目补齐"
+      ],
+      "counterexamples": [
+        "只有功能名称和宣传口号，没有真实可见结果。",
+        "把同一左右版式重复到底，遮蔽需要放大的证据。"
+      ],
+      "constraints": [
+        "参考素材与模板名称是两种输入入口，不替代 recipe/compose/free 编排方式。",
+        "首幕建立具体所得，主体证明主张，尾幕回到成果与产品；按实际音频安排时间。",
+        "保持产品事实，制作和来源说明留内部，不添加无依据业绩或制作身份标签。"
+      ],
+      "fallback": "缩小到已有证据支持的价值；缺少必要事实或制作能力时保留已完成工作并报告具体缺口，不把方案当成成片。",
+      "verification": {
+        "design": {
+          "status": "authored",
+          "evidence": []
+        },
+        "preview": {
+          "status": "not_run",
+          "evidence": []
+        },
+        "exported": {
+          "status": "not_run",
+          "evidence": []
+        }
+      },
+      "narrative_options": [
+        "结果先行—价值讲解—品牌收束",
+        "品牌承诺—实际证明—成果回收"
+      ],
+      "layouts": [
+        "split-explainer",
+        "full-frame-result",
+        "detail-focus",
+        "before-after",
+        "multi-image"
+      ],
+      "style_ids": [
+        "product-minimal",
+        "paper-editorial",
+        "dual-ground-launch"
+      ],
+      "motion_ids": [
+        "reveal",
+        "highlight",
+        "state-swap",
+        "camera-focus",
+        "hold"
+      ],
+      "minimum_acceptance": [
+        "两种入口可独立开始",
+        "首尾两幕与主体承诺呼应",
+        "每项主张有真实画面证据",
+        "按真实音频完成字幕与混音，观看听审分别记录"
+      ],
+      "support_boundary": "支持由项目和素材提炼宣传片；模板为指导，不附带通用渲染器，不保证任意产品自动运行。",
+      "recipe_ids": [
+        "product-split-explainer"
+      ],
+      "expression_ids": [
+        "narrative.output-as-proof",
+        "narrative.goal-proof",
+        "camera.focus-frame",
+        "visual.target-callout",
+        "text.read-then-move",
+        "sound.attention-mix",
+        "production.dwell-budget"
+      ],
+      "source_refs": [
+        "references/product-promo-direction.md",
+        "references/sources.md"
       ]
     }
   ]

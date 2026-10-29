@@ -85,7 +85,8 @@
   "category": "超级峰原有风格",
   "scenario_ids": [
     "product-demo",
-    "feature-motion"
+    "feature-motion",
+    "product-promo"
   ],
   "implementation": {
     "status": "guidance",

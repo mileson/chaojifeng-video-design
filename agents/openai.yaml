@@ -1,4 +1,4 @@
 interface:
   display_name: "超级峰的视频设计方法论"
-  short_description: "从导演意图与可扩展风格包到制作、审片和成片交付"
+  short_description: "产品宣传、音乐视频与可扩展风格，从导演编排到成片交付"
   default_prompt: "使用 $chaojifeng-video-design，根据本次目标确定主线、镜头任务、风格包、素材与声画节奏，完成所需的视频方案或成片，并交付可编辑源与实际验证结果。"

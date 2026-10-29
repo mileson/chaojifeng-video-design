@@ -262,7 +262,8 @@
       "category": "超级峰原有风格",
       "scenario_ids": [
         "product-demo",
-        "feature-motion"
+        "feature-motion",
+        "product-promo"
       ],
       "implementation": {
         "status": "guidance",
@@ -11578,7 +11579,8 @@
         "image-story",
         "story-video",
         "brand-film",
-        "music-visual"
+        "music-visual",
+        "product-promo"
       ],
       "implementation": {
         "status": "guidance",
@@ -11664,7 +11666,8 @@
         "product-demo",
         "knowledge-explainer",
         "feature-motion",
-        "brand-film"
+        "brand-film",
+        "product-promo"
       ],
       "implementation": {
         "status": "guidance",

@@ -1,6 +1,6 @@
 ---
 name: chaojifeng-video-design
-description: 设计和制作产品演示、知识讲解（含 Rap／说唱）、资讯、图片成片、故事、功能动效、品牌短片与音乐视觉视频。支持选择或扩展视频风格、组合动效、强化前三秒、素材调度、音乐编排、参考片研究和局部修改；从导演意图到可编辑计划、制作、审片及可播放成片，也可只交方案或分镜。模型与引擎中立，按任务加载风格包和技术能力。
+description: 设计和制作产品宣传（参考素材或模板名称两种入口）、产品演示、知识讲解（含 Rap／说唱）、资讯、图片成片、故事、功能动效、品牌短片与音乐视觉视频。支持选择或扩展视频风格、组合动效、强化前三秒、素材调度、音乐编排、参考片研究和局部修改；从导演意图到可编辑计划、制作、审片及可播放成片，也可只交方案或分镜。模型与引擎中立，按任务加载风格包和技术能力。
 ---
 
 # 超级峰的视频设计方法论
@@ -19,6 +19,7 @@ description: 设计和制作产品演示、知识讲解（含 Rap／说唱）、
 | 要解决的问题 | 读取与动作 |
 | --- | --- |
 | 故事、镜头、声音、观众变化 | [DIRECTOR.md](DIRECTOR.md)，再按 [任务路由](references/task-routing.md) 加载相关方法 |
+| 产品宣传、参考片套用或按模板名称制作 | 先读 [产品宣传视频](references/product-promo-direction.md)；参考素材先拆首幕、主体和尾幕，模板名称精确查询配方；“极简左右讲解”加载 [完整模板](templates/product-split-explainer.md)，连续完成声画制作与实际验收 |
 | 给歌曲设计音乐视频，包括未指定主题或风格 | 先读 [歌曲视觉导演](references/song-visual-direction.md)、[声画事件模型](references/music-event-model.md)和[音乐镜头与运动编排](references/music-shot-choreography.md)，有演唱先取得歌词时间线，再用[音乐导演编排模板](templates/music-direction.md)或已有计划落实多层声音锚点、事件前后变化、视线与运镜、动作峰值、空间材质及实际感知验收 |
 | 有旁白、歌词或需要字幕 | 读 [字幕导演与配色](references/subtitle-direction.md)，在分镜阶段确定语言、语义分组、场景锚点、视线接力、阅读窗和音乐落点，优先探索空间文字与动态排版，保留固定字幕选项 |
 | 缺少转写、音乐理解或人声分离能力 | 按 [音频能力检测与按需安装](references/audio-capability-setup.md) 独立选择 Whisper、ACE-Step 1.5 或 HTDemucs；先静态检测与资源核对，再按授权补齐和短样验证，不默认全装或启动下载 |
@@ -29,11 +30,12 @@ description: 设计和制作产品演示、知识讲解（含 Rap／说唱）、
 | 首次扩展、维护、导入与目录生成 | [MAINTAINING.md](MAINTAINING.md)，维护库与制作当前作品分别处理 |
 | 从计划走到成片 | [制作流程](references/production-workflow.md)、[计划合同](references/plan-contract.md)和[审片与修改](references/review-and-revision.md) |
 
-三种入口继续可用：recipe 选择场景配方，compose 组合局部布局和动作，free 自由设计。场景、风格、动效、表达与配方通过 [目录工具](references/commands.md) 按需查询；数量以生成目录为准。表达是指导，源码是实现参考；各自不代表某个宿主已经安装或渲染通过。
+三种编排方式继续可用：recipe 选择场景配方，compose 组合局部布局和动作，free 自由设计。场景、风格、动效、表达与配方通过 [目录工具](references/commands.md) 按需查询；数量以生成目录为准。表达是指导，源码是实现参考；各自不代表某个宿主已经安装或渲染通过。
 
 ```sh
 python3 SKILL_ROOT/scripts/catalog.py --kind style list --scenario knowledge-explainer
 python3 SKILL_ROOT/scripts/stylepacks.py resolve 中国水墨
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 极简左右讲解
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe get knowledge-rap-explainer
 python3 SKILL_ROOT/scripts/validate_plan.py /project/video/plan.json
 python3 SKILL_ROOT/scripts/check_delivery.py /project/video/plan.json /project/video/delivery.json --probe --require-video
