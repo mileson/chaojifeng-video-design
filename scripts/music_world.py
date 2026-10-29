@@ -203,7 +203,7 @@ def main():
     s=sub.add_parser('init');s.add_argument('--music',required=True);s.add_argument('--theme',required=True)
     s.add_argument('--style',required=True);s.add_argument('--into',required=True)
     s.add_argument('--duration',type=float,default=60);s.add_argument('--source-in',type=float,default=0)
-    s.add_argument('--fps',type=int,default=30);s.add_argument('--width',type=int,default=1920);s.add_argument('--height',type=int,default=1080)
+    s.add_argument('--fps',type=int,default=30);s.add_argument('--width',type=int,default=1080);s.add_argument('--height',type=int,default=1920)
     s.add_argument('--engine',choices=['auto','three','blender'],default='auto')
     for cmd in ('analyse','validate'):
         s=sub.add_parser(cmd);s.add_argument('--project',required=True)

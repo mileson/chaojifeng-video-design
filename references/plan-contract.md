@@ -13,7 +13,7 @@ schema_version 为 1。路径相对计划文件所在目录；允许显式绝对
   "audience": "目标观众",
   "scenario_id": "knowledge-explainer",
   "mode": "recipe",
-  "output": {"width": 1920, "height": 1080, "fps": 30, "duration_seconds": 8, "language": "zh-CN", "audio": "silent"},
+  "output": {"width": 1080, "height": 1920, "fps": 30, "duration_seconds": 8, "language": "zh-CN", "audio": "silent"},
   "design": {"style_id": "paper-editorial", "rationale": "为什么这种表达适合这段内容", "preserve": []},
   "runtime": {"adapter": "existing-project", "capabilities": []},
   "assets": [],
@@ -32,7 +32,7 @@ schema_version 为 1。路径相对计划文件所在目录；允许显式绝对
 
 mode 为 recipe、compose 或 free。内置 scenario_id 见场景目录；自定义场景用 custom 并提供 scenario_description。自定义视觉风格用 design.style_id=custom，附 design.tokens 与 rationale。runtime.adapter 是已选执行路线的名字，并非“已安装/已可渲染”证明。runtime.status 为 unresolved 或 ready，省略视为 unresolved；capabilities 只登记已经探测的特性，待实现能力写 required_capabilities。通用动效使用 time-control、opacity、position、stroke 等语义能力，DOM/SVG/Canvas或某个引擎只是实现选择，不是所有动效的硬前提。unresolved 产生可行动警告，不声称可以导出；ready 下必需能力缺失是错误。结构样例采用 unresolved，不能以示例字段冒充执行探测。
 
-输出 width/height/fps/duration_seconds 为正数，宽高与fps为整数，audio 为 silent/optional/required。使用当前工程的真实规格，不把改宽高视为完成重排。scenes 按起点排序，从0覆盖至总时长，无空洞；跨镜重叠需要在后一个镜头写 overlap_reason。hold_seconds 为镜头内稳定阅读的预算，不自动等价于全部文字的有效阅读时间。
+输出 width/height/fps/duration_seconds 为正数，宽高与fps为整数，audio 为 silent/optional/required。新视频未指定画幅默认 9:16（1080×1920），明确比例优先；局部修改沿用当前工程真实规格。分镜前确定宽高，重新安排主体、字幕与保护区域，不把改宽高视为完成重排。历史案例与标注轨道示例可保留其原始横版坐标，不将其当作新片默认值。scenes 按起点排序，从0覆盖至总时长，无空洞；跨镜重叠需要在后一个镜头写 overlap_reason。hold_seconds 为镜头内稳定阅读的预算，不自动等价于全部文字的有效阅读时间。
 
 ## 对象、动作与声音
 

@@ -7,8 +7,8 @@
   "scenario_id": "knowledge-explainer",
   "mode": "recipe",
   "output": {
-    "width": 1920,
-    "height": 1080,
+    "width": 1080,
+    "height": 1920,
     "fps": 30,
     "duration_seconds": 8,
     "language": "zh-CN",
