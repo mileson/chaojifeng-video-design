@@ -33,6 +33,10 @@
 
 上游的 readcheck、ASR、混音与渲染代码可供项目适配；现有 check_delivery、film_probe、audio_event_audit、explainer_timing_audit 分别检查文件、媒体与声明排程。缺少所需接口时登记未检查，不能当作通过。
 
+## 计划与实际执行的连接
+
+按 [执行合同](references/execution-contract.md) 使用可选 execution 绑定，`execution_contract.py compile` 从当前主计划派生帧范围并核实现文件，`assets/execution/runtime.mjs` 提供无依赖采样与适配入口。项目负责真实绘制和引擎状态回读；`audit` 只核所给状态及双语字幕框，`impact` 沿依赖给出局部重做建议。接口、采样和哈希不证明视觉或听感，原有计划与引擎继续可用。
+
 ## 从源码进入项目
 
 先读选中包的 STYLE.md、STYLE.upstream.md；确定本片意图后读 DEMO.md，按需复制 demo/ 中的实现到用户工程。修正 LIB、导入、资源和构建路径，按当前官方文档与本地版本核实 API。不要在库内执行 build.sh，不直接照搬上游模型、声音服务、素材或发布脚本。

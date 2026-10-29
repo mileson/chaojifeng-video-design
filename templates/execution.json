@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "plan_sha256": "REPLACE_WITH_CURRENT_PLAN_SHA256",
+  "deterministic": true,
+  "inputs": [],
+  "required_source_ids": ["motion-01"],
+  "bindings": [
+    {
+      "id": "reveal-subject",
+      "source_id": "motion-01",
+      "target_id": "object-01",
+      "kind": "subject",
+      "implementation": "src/scene.mjs",
+      "inputs": [],
+      "uses": [],
+      "must_change": true,
+      "handles_frames": 2,
+      "channels": {
+        "opacity": {"from": 0, "to": 1, "easing": "smooth"}
+      }
+    }
+  ]
+}

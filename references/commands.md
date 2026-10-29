@@ -2,6 +2,14 @@
 
 将 SKILL_ROOT 替换为本 Skill 根目录。选项以脚本 --help 为准；检查不代替实际制作、观看和试听。
 
+执行绑定、观测与返修范围按 [执行合同](execution-contract.md) 补齐本项目实现与依赖。这些命令不安装软件、不执行项目代码、不渲染视频：
+
+```sh
+python3 SKILL_ROOT/scripts/execution_contract.py compile /project/video/plan.json /project/video/execution.json --out /project/video/execution.bundle.json
+python3 SKILL_ROOT/scripts/execution_contract.py audit /project/video/execution.bundle.json /project/video/observed.json --out /project/video/execution-audit.json
+python3 SKILL_ROOT/scripts/execution_contract.py impact /project/video/previous.bundle.json /project/video/execution.bundle.json --out /project/video/rebuild.json
+```
+
 ```text
 python3 SKILL_ROOT/scripts/catalog.py --kind scenario list
 python3 SKILL_ROOT/scripts/catalog.py --kind style list

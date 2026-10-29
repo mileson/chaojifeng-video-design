@@ -589,12 +589,36 @@ flowchart LR
 | 自动生成目录 | 风格元数据生成索引和画廊，新增包后统一更新 |
 | 文件与依赖检查 | 检测命名冲突、缺失引用、循环依赖、文件变化和计划锁 |
 | 媒体与交付检查 | 探测实际视频与音频，核对排程、字幕、声音事件和交付文件 |
+| 计划落实到代码 | 从主计划派生帧范围，绑定相机、对象、字幕与实现，检查必要动作是否遗漏 |
+| 实际状态与字幕位置 | 接入项目渲染器回读，检查采样变化及中英字幕成组位置；结合连续片段审片 |
+| 局部返修 | 比较实现、素材与依赖，列出受影响绑定和重做帧段，保留可复用候选 |
 
 ```sh
 python3 scripts/stylepacks.py resolve 中国水墨
 python3 scripts/stylepacks.py init brand-ink --into /project/video/styles --extends opuscar-ink-wash
 python3 scripts/stylepacks.py validate --style-root /project/video/styles
 ```
+
+```mermaid
+flowchart LR
+ A[导演与分镜] --> B[统一声画排程]
+ B --> C[对象与代码绑定]
+ C --> D[渲染状态与关键片段]
+ D --> E{采样检查与实际审片}
+ E -->|符合要求| F[成片与编辑源]
+ E -->|未兑现| G[定位依赖与局部返修]
+ G --> C
+ classDef keep fill:#E5E7EB,stroke:#6B7280,color:#111827;
+ classDef add fill:#DCFCE7,stroke:#16A34A,color:#14532D;
+ classDef change fill:#FEF3C7,stroke:#D97706,color:#78350F;
+ classDef fix fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+ class A,F keep;
+ class C,D add;
+ class B,E change;
+ class G fix;
+```
+
+[执行合同与接入方式](references/execution-contract.md) 提供 `compile`、`audit`、`impact` 工具和轻量时间采样模块。具体引擎仍由项目适配；检查记录、实际画面与听审分别验收。工作流方法参考 [Eian 的六步代码视频制作实践](https://x.com/eianlu/status/2115761407774118044)，直接出片模式由 Agent 内部连续检查和返修。
 
 扩展规范见 [维护说明](MAINTAINING.md) 和 [风格包合同](references/style-pack-contract.md)。导演与技术分层、风格规则与案例分开维护等工程方法参考了 Lemo-Opuscar，本库保留自己的交付方式、合同与工具接口。
 
