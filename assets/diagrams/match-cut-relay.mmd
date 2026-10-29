@@ -1,0 +1,21 @@
+flowchart TD
+    A["真实音源、歌词与音乐事件地图"] --> B["接力主线<br/>共同含义与下一镜的新信息"]
+    B --> C["切口前后状态<br/>出镜 / 入镜 · 峰值 / 剪切 / 落定"]
+    C --> D["代码构建动态场景<br/>主体 · 相机 · 遮挡 · 成组双语字幕"]
+    D --> E["短段预演<br/>前三秒与关键转场"]
+    E --> F["切口检查<br/>前后画面 · 连续运动 · 真实音轨 · 阅读窗"]
+    F -->|表达已兑现| G["完成全片与审片"]
+    F -->|未兑现| H["修改场景与时序"]
+    H --> D
+    classDef input fill:#E5E7EB,stroke:#6B7280,color:#111827;
+    classDef directing fill:#EDE9FE,stroke:#7C3AED,color:#2E1065;
+    classDef making fill:#DBEAFE,stroke:#2563EB,color:#172554;
+    classDef review fill:#FEF3C7,stroke:#D97706,color:#78350F;
+    classDef output fill:#DCFCE7,stroke:#16A34A,color:#14532D;
+    classDef revise fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D;
+    class A input;
+    class B,C directing;
+    class D making;
+    class E,F review;
+    class G output;
+    class H revise;

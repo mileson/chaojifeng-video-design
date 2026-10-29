@@ -148,6 +148,16 @@ DeepWiki 用于架构起点，Context7 未收录该库，工程结论由固定�
 2026-10-28 用户反馈《阴天》候选片缺少随音乐可辨的镜头、运镜和动效；已确认 [音乐镜头与运动编排](music-shot-choreography.md) 的音乐事件、镜头事件、运动设计与声画审片。参考 [Motion Engineering](https://x.com/beamnxw/status/2108616740846420354) 的事件分解与局部修正、[工具清单](https://x.com/e1genqq/status/2114445900131013003) 的职责分类、[Motion Lab](https://x.com/flxrnc/status/2105311836190978392) 的动作阶段和逐帧返修；来源为文章和推荐清单，不是音乐卡点行业标准。参考视频只查看了部分画面状态，未独立完成音轨听审；文章案例参数、效果与作者反馈不继承为本 Skill 的验证。工具清单未全量研究；Remotion、HyperFrames、Anime.js 经项目结构问答及文档核对，其他为候选，具体工程仍需验证。用户案例支持定位缺口，不单独证明修改后能改善实际作品。访问与互动数据随平台变化，采集时未统一统计口径。
 
 
+## 匹配剪辑与音乐转场（2026-10-29）
+
+灵感来源于 [Sac-Y/match-cut](https://github.com/Sac-Y/match-cut/tree/b51c98f5c795b046ceb1c69396368dbabd88d5d9)，研究固定提交 `b51c98f5c795b046ceb1c69396368dbabd88d5d9`。读取规划、后期与检查文档，核对音乐分析、帧选择、几何／旋转／甩镜、声音放置与检查源码，并解析 iPhone Duo、Big Mac 两份实际配置及作者返修记录。DeepWiki 未收录，问答接口返回限流，结论由仓库原始文件支撑；Chrome 样片页超时，本轮未连续观看、真实听审或运行上游管线。
+
+切口前后状态、动作接力、跨镜共享运动、有效选段及切口对照用于指导 [匹配剪辑与音乐转场](match-cut-relay.md)。[iPhone 案例](https://github.com/Sac-Y/match-cut/blob/b51c98f5c795b046ceb1c69396368dbabd88d5d9/examples/iphone-duo/README.md) 记录了动作碎片化、镜头过密、方向反转和停帧的返修；[Big Mac 案例](https://github.com/Sac-Y/match-cut/blob/b51c98f5c795b046ceb1c69396368dbabd88d5d9/examples/big-mac/README.md) 明确指出部分物件仅形状相似、人物关系未兑现。上述是作者复盘，未独立复验其实际效果。
+
+上游 music.py 采用单一 BPM 与四拍小节假设，render.py 主要处理已有视频／图片的选帧和后期，qc.py 的对齐与亮度测量不能证明语义、动作连续性或听感。本库保留真实歌曲的多层锚点、代码构建动态主体、空间双语字幕及实际看听边界；不继承固定参数、模型服务、广告结构或案例通过状态。方法适配尚待具体新作品验证，仓库互动量不作为传播或留存证据。
+
+上游采用 MIT，Copyright (c) 2026 Sac-Y。本次只沉淀方法及公开来源链接，未导入上游脚本、样片、音乐或品牌素材；若后续复用实质源码，保留版权和许可证，并分别核素材条件。
+
 ## 空间字幕与视线编排
 
 2026-10-29，经用户确认，将字幕从固定阅读层扩展为可参与场景、运镜和注意力交接的表达，落实到 [字幕导演](subtitle-direction.md)、[声画事件模型](music-event-model.md) 与现有 [编排笔记](../templates/music-direction.md)。意象关联需通过画面建立，词组拆分需保留完整语义；七类编排方向为本库归纳，可自由扩展，不是来源方的官方分类。

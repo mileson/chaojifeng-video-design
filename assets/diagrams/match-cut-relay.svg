@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1050" viewBox="0 0 960 1050" role="img" aria-labelledby="title desc">
+<title id="title">镜头接力与音乐转场</title>
+<desc id="desc">从声音与含义出发定义切口，以代码实现，预演前三秒和关键转场，检查后完成全片，未兑现时返修。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#62748B"/></marker></defs>
+<rect width="960" height="1050" rx="24" fill="#F8FAFC"/>
+<g font-family="PingFang SC,Microsoft YaHei,Noto Sans CJK SC,sans-serif">
+<text x="40" y="55" font-size="32" fill="#0F172A" font-weight="700" text-anchor="start">镜头接力与音乐转场</text>
+<text x="40" y="91" font-size="20" fill="#334155" font-weight="400" text-anchor="start">让下一镜接住动作、视线与音乐</text>
+<rect x="40" y="125" width="670" height="82" rx="14" fill="#E5E7EB" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="62" y="158" font-size="24" fill="#172554" font-weight="600" text-anchor="start">真实声音与事件</text>
+<text x="62" y="189" font-size="20" fill="#334155" font-weight="400" text-anchor="start">音源 · 歌词 · 段落 / 乐句 / 瞬间</text>
+<rect x="40" y="235" width="670" height="82" rx="14" fill="#EDE9FE" stroke="#A78BFA" stroke-width="1.5"/>
+<text x="62" y="268" font-size="24" fill="#172554" font-weight="600" text-anchor="start">接力主线</text>
+<text x="62" y="299" font-size="20" fill="#334155" font-weight="400" text-anchor="start">共同含义 · 下一镜新增什么</text>
+<rect x="40" y="345" width="670" height="82" rx="14" fill="#EDE9FE" stroke="#A78BFA" stroke-width="1.5"/>
+<text x="62" y="378" font-size="24" fill="#172554" font-weight="600" text-anchor="start">切口前后状态</text>
+<text x="62" y="409" font-size="20" fill="#334155" font-weight="400" text-anchor="start">出镜 / 入镜 · 峰值 / 剪切 / 落定</text>
+<rect x="40" y="455" width="670" height="82" rx="14" fill="#DBEAFE" stroke="#60A5FA" stroke-width="1.5"/>
+<text x="62" y="488" font-size="24" fill="#172554" font-weight="600" text-anchor="start">代码构建动态场景</text>
+<text x="62" y="519" font-size="20" fill="#334155" font-weight="400" text-anchor="start">主体 · 相机 · 遮挡 · 成组双语字幕</text>
+<rect x="40" y="565" width="670" height="82" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+<text x="62" y="598" font-size="24" fill="#172554" font-weight="600" text-anchor="start">短段预演</text>
+<text x="62" y="629" font-size="20" fill="#334155" font-weight="400" text-anchor="start">前三秒 · 关键转场的准备、交接与落定</text>
+<rect x="40" y="675" width="670" height="82" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+<text x="62" y="708" font-size="24" fill="#172554" font-weight="600" text-anchor="start">切口检查</text>
+<text x="62" y="739" font-size="20" fill="#334155" font-weight="400" text-anchor="start">前后画面 · 连续运动 · 真实音轨 · 阅读窗</text>
+<rect x="40" y="865" width="670" height="82" rx="14" fill="#DCFCE7" stroke="#4ADE80" stroke-width="1.5"/>
+<text x="62" y="898" font-size="24" fill="#172554" font-weight="600" text-anchor="start">完成全片与审片</text>
+<text x="62" y="929" font-size="20" fill="#334155" font-weight="400" text-anchor="start">逐片核对字幕、动作、转场及声画落点</text>
+<path d="M375 207 V225" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M375 317 V335" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M375 427 V445" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M375 537 V555" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M375 647 V665" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M375 757 V855" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="399" y="812" font-size="20" fill="#166534" font-weight="600" text-anchor="start">表达已兑现</text>
+<rect x="750" y="580" width="180" height="90" rx="14" fill="#FEE2E2" stroke="#F87171" stroke-width="1.5"/>
+<text x="840" y="614" font-size="22" fill="#991B1B" font-weight="600" text-anchor="middle">未兑现</text>
+<text x="840" y="646" font-size="18" fill="#991B1B" font-weight="400" text-anchor="middle">修改场景与时序</text>
+<path d="M710 716 H840 V680" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M840 580 V496 H720" fill="none" stroke="#62748B" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="40" y="998" font-size="20" fill="#334155" font-weight="400" text-anchor="start">同一排程驱动实现；抽帧、连续观看与听审分别记录。</text>
+</g></svg>
