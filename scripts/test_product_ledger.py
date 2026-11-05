@@ -92,7 +92,7 @@ class SurveyTests(unittest.TestCase):
             limit_paths = {x["path"] for x in candidates["limits"]}
             self.assertIn("README.md", limit_paths)
             self.assertFalse({"AGENTS.md", "node_modules/dep/notes.md", ".codex/note.md"} & limit_paths)
-            for section in ("emphasis", "facts", "boundaries", "evidence", "chapters", "claims"):
+            for section in ("emphasis", "facts", "boundaries", "evidence", "chapters", "claims", "framings"):
                 self.assertEqual(ledger[section], [])
 
     def test_init_does_not_overwrite_without_force(self):
@@ -266,6 +266,71 @@ class CheckTests(unittest.TestCase):
         issues = self.check(good_ledger(), scripts=[script])
         self.assertEqual(self.codes(issues), [])
         self.assertIn("claim_not_in_script", self.codes(issues, "warn"))
+
+    def framed(self):
+        ledger = good_ledger()
+        ledger["framings"] = [
+            {"id": "P01", "kind": "pain", "chapter_id": "open", "text": "一份内容要发好几个平台，是不是很费时间？", "boundary_ids": []},
+            {"id": "P02", "kind": "worry", "chapter_id": "open", "text": "又怕被平台限流。", "boundary_ids": ["B1"],
+             "note": "只是观众的顾虑，片中不承诺结果"},
+            {"id": "P03", "kind": "question", "chapter_id": "open", "text": "有没有一款能一次发到多个平台的？", "boundary_ids": []},
+        ]
+        return ledger
+
+    def test_framings_are_optional_and_a_valid_set_passes(self):
+        self.assertEqual(self.codes(self.check(good_ledger())), [])
+        issues = self.check(self.framed())
+        self.assertEqual(self.codes(issues), [], issues.items)
+        self.assertEqual(self.codes(issues, "warn"), [])
+
+    def test_framing_needs_a_kind_a_chapter_and_a_text(self):
+        ledger = self.framed()
+        ledger["framings"][0]["kind"] = "claim"
+        self.assertIn("bad_kind", self.codes(self.check(ledger)))
+        ledger = self.framed()
+        ledger["framings"][0]["chapter_id"] = "nope"
+        self.assertIn("unknown_ref", self.codes(self.check(ledger)))
+        ledger = self.framed()
+        ledger["framings"][0]["text"] = ""
+        self.assertIn("missing_field", self.codes(self.check(ledger)))
+        ledger = self.framed()
+        ledger["framings"][2]["boundary_ids"] = ["B9"]
+        self.assertIn("unknown_ref", self.codes(self.check(ledger)))
+
+    def test_a_framing_outside_the_opening_is_only_a_warning(self):
+        ledger = self.framed()
+        ledger["framings"][0]["chapter_id"] = "ch1"
+        issues = self.check(ledger)
+        self.assertEqual(self.codes(issues), [])
+        self.assertIn("framing_outside_opening", self.codes(issues, "warn"))
+
+    def test_a_worry_must_name_its_boundary_and_say_it_is_no_promise(self):
+        ledger = self.framed()
+        ledger["framings"][1]["boundary_ids"] = []
+        self.assertIn("worry_without_boundary", self.codes(self.check(ledger)))
+        ledger = self.framed()
+        del ledger["framings"][1]["note"]
+        self.assertIn("worry_without_note", self.codes(self.check(ledger)))
+
+    def test_framings_are_not_claims_and_need_no_fact(self):
+        ledger = self.framed()
+        for framing in ledger["framings"]:
+            self.assertNotIn("fact_ids", framing)
+        self.assertEqual(self.codes(self.check(ledger)), [])
+
+    def test_avoid_terms_also_cover_framing_lines_through_the_script(self):
+        script = Path(self.tmp.name) / "narration.txt"
+        script.write_text("有没有一款永久免费的？\n一次发到多个平台，不用重复操作。\n", encoding="utf-8")
+        issues = self.check(self.framed(), scripts=[script])
+        self.assertEqual(len([i for i in issues.items if i["code"] == "avoid_term_hit"]), 1)
+
+    def test_framing_missing_from_the_script_is_a_warning_only(self):
+        script = Path(self.tmp.name) / "narration.txt"
+        script.write_text("一份内容要发好几个平台，是不是很费时间？\n又怕被平台限流。\n一次发到多个平台，不用重复操作。\n", encoding="utf-8")
+        issues = self.check(self.framed(), scripts=[script])
+        self.assertEqual(self.codes(issues), [])
+        warns = [i for i in issues.items if i["code"] == "framing_not_in_script"]
+        self.assertEqual([w["where"] for w in warns], ["framings[P03]"])
 
     def test_cli_exit_codes_and_json(self):
         ledger_path = Path(self.tmp.name) / "ledger.json"

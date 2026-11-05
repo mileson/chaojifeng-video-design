@@ -7,6 +7,10 @@ check LEDGER                check that facts, emphasis, evidence, chapters and c
 The source tree is only read: nothing is executed, imported, installed or sent anywhere.
 The check proves the ledger is internally closed and that cited sources exist; it cannot
 prove a fact is true or replace running the real product to capture evidence.
+
+Optional "framings" register the opening lines that speak for the viewer (a pain, a worry,
+a question). They are not product claims, so they need no fact; a worry must name the
+boundary that stops the film from promising its opposite.
 """
 import argparse
 import datetime
@@ -47,6 +51,7 @@ BOUNDARY_KIND = {"membership", "reserved", "unverified", "policy", "license", "p
 EVIDENCE_LEVEL = {"run": 1, "store": 2, "fixture": 3, "rebuild": 4}
 PRIVACY_OK = {"clean", "redacted"}
 CHAPTER_ROLE = {"opening", "chapter", "closing"}
+FRAMING_KIND = {"pain", "worry", "question"}
 PLACEHOLDER = re.compile(r"<[^<>\n]{1,80}>")
 PUNCT = re.compile(r"[\s，。、；：！？,.;:!?“”\"'‘’（）()\[\]【】《》—\-…·]+")
 
@@ -306,7 +311,7 @@ def cmd_init(args):
             "source_root": str(root),
             "surveyed_on": datetime.date.today().isoformat(),
         },
-        "emphasis": [], "facts": [], "boundaries": [], "evidence": [], "chapters": [], "claims": [],
+        "emphasis": [], "facts": [], "boundaries": [], "evidence": [], "chapters": [], "claims": [], "framings": [],
         "candidates": {
             "note": "起点而非事实：每一条都要打开原文核对，核对后写入 facts 或 boundaries。check 忽略本部分。",
             "names": names, "versions": versions, "docs": survey_docs(root),
@@ -452,6 +457,7 @@ def check_ledger(ledger, source_root=None, evidence_root=None, scripts=None):
     evidence = index_ids(ledger.get("evidence"), "evidence", issues)
     chapters = index_ids(ledger.get("chapters"), "chapters", issues)
     claims = index_ids(ledger.get("claims"), "claims", issues)
+    framings = index_ids(ledger.get("framings"), "framings", issues)
 
     for ident, fact in facts.items():
         where = "facts[%s]" % ident
@@ -587,12 +593,33 @@ def check_ledger(ledger, source_root=None, evidence_root=None, scripts=None):
         elif chapter_of_emphasis.get(ident):
             issues.warn("unsupported_with_chapter", where, "不成立的侧重点不应有章节")
 
+    for ident, item in framings.items():
+        where = "framings[%s]" % ident
+        need(item, "text", where, issues)
+        kind = item.get("kind")
+        if kind not in FRAMING_KIND:
+            issues.error("bad_kind", where, "kind 必须是 %s" % "、".join(sorted(FRAMING_KIND)))
+        chapter = chapters.get(item.get("chapter_id"))
+        if chapter is None:
+            issues.error("unknown_ref", where, "chapter_id 指向不存在的章节")
+        elif chapter.get("role") != "opening":
+            issues.warn("framing_outside_opening", where, "替观众说话的句子通常放在开场章节")
+        boundary_ids = as_list(item.get("boundary_ids"))
+        for ref in boundary_ids:
+            if ref not in boundaries:
+                issues.error("unknown_ref", where, "boundary_ids 引用了不存在的边界 %s" % ref)
+        if kind == "worry":
+            if not boundary_ids:
+                issues.error("worry_without_boundary", where, "顾虑要登记由哪条边界收住：片中不能承诺它的反面")
+            if not str(item.get("note") or "").strip():
+                issues.error("worry_without_note", where, "顾虑必须写明：只是观众的顾虑，不是产品承诺，片中怎样收住")
+
     if scripts:
-        check_scripts(scripts, boundaries, claims, issues)
+        check_scripts(scripts, boundaries, claims, issues, framings)
     return issues
 
 
-def check_scripts(paths, boundaries, claims, issues):
+def check_scripts(paths, boundaries, claims, issues, framings=None):
     texts = []
     for path in paths:
         try:
@@ -614,6 +641,10 @@ def check_scripts(paths, boundaries, claims, issues):
             text = claim.get("text")
             if isinstance(text, str) and text.strip() and normalize(text) not in whole:
                 issues.warn("claim_not_in_script", "claims[%s]" % ident, "主张原句没有在稿件中找到，可能已改写，请同步账本")
+        for ident, framing in (framings or {}).items():
+            text = framing.get("text")
+            if isinstance(text, str) and text.strip() and normalize(text) not in whole:
+                issues.warn("framing_not_in_script", "framings[%s]" % ident, "开场句原文没有在稿件中找到，可能已改写，请同步账本")
 
 
 def cmd_check(args):

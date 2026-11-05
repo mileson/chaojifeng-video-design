@@ -21,7 +21,7 @@
 | --- | --- |
 | 给参考素材制作产品宣传片 | product-promo；先读 [参考片研究](reference-film-study.md)和[产品宣传视频](product-promo-direction.md)，提炼首尾编排、主体结构与声音，按当前产品事实适配 |
 | 按“极简左右讲解”或已登记模板名称制作 | product-promo；精确查询 recipe 的名称／别名／ID，加载[极简左右讲解](../templates/product-split-explainer.md)，无需另找参考片；未知名称不静默替换 |
-| 给产品源码和几项选题侧重点，做说明类产品宣传片 | product-promo；先读 [源码说明片](product-source-explainer.md)，精确查询 recipe `product-source-explainer`（名称“源码说明片”），加载[源码说明片模板](../templates/product-source-explainer.md)；用 `product_ledger.py` 建账本并检查闭合，真实证据按证据阶梯取，视觉语法沿用极简左右讲解；旁白声音按 [讲解配音的声音方向](narration-voice-direction.md)：超级峰自己的产品默认用其授权的本人声音，语速偏快、有起伏，替他人制作或授权不明才用通用声 |
+| 给产品源码和几项选题侧重点，做说明类产品宣传片 | product-promo；先读 [源码说明片](product-source-explainer.md)，精确查询 recipe `product-source-explainer`（名称“源码说明片”），加载[源码说明片模板](../templates/product-source-explainer.md)；用 `product_ledger.py` 建账本并检查闭合，真实证据按证据阶梯取，视觉语法沿用极简左右讲解；叙事默认先抛观众的麻烦与疑问、再揭晓产品、再讲怎么操作（开场句登记为 `framings`，顾虑不能被说成产品承诺）；旁白声音按 [讲解配音的声音方向](narration-voice-direction.md)：超级峰自己的产品默认用其授权的本人声音，语速偏快、有起伏，替他人制作或授权不明才用通用声 |
 | 把外文访谈、演讲或播客解读成中文视频，或复刻“引语 + 卡片 + 本人判断”形式 | interview-commentary；先读 [访谈解读](interview-commentary-direction.md)，精确查询 recipe `interview-commentary-explainer`（名称／别名／ID），加载 [访谈解读模板](../templates/interview-commentary.md)；可执行流水线用 `chaojifeng-interview-commentary`；本人音色只用于授权的本人讲解，听感未听审保持 `not_checked` |
 | 诗词、乐器、景物与立体文字共同表达 | music-event-performance；在音乐驱动流程中补读 [诗词音乐世界](poetry-music-world.md)，按当前唱词和事件建立意象、运动映射与接触关系 |
 | 用三维对象响应音乐，主题或风格可由歌曲推导 | music-event-performance 的音乐先行分支；先读 [歌曲视觉导演](song-visual-direction.md)和[音乐镜头与运动编排](music-shot-choreography.md)，再读 [音乐驱动三维世界](music-driven-world.md)，默认连续完成；理论主题补知识表达 |

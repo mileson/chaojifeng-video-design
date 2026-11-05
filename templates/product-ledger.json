@@ -64,6 +64,12 @@
   ],
   "chapters": [
     {
+      "id": "ch0",
+      "role": "opening",
+      "claim_ids": [],
+      "evidence_ids": []
+    },
+    {
       "id": "ch1",
       "role": "chapter",
       "emphasis_id": "E1",
@@ -77,6 +83,24 @@
       "text": "<口播里的原句>",
       "fact_ids": ["F01"],
       "chapter_id": "ch1"
+    }
+  ],
+  "framings": [
+    {
+      "id": "P01",
+      "kind": "pain",
+      "chapter_id": "ch0",
+      "text": "<开场里替观众说出的麻烦，原句>",
+      "boundary_ids": [],
+      "note": "<观众的话，不是产品主张；答案在哪一章>"
+    },
+    {
+      "id": "P02",
+      "kind": "worry",
+      "chapter_id": "ch0",
+      "text": "<开场里替观众说出的顾虑，原句>",
+      "boundary_ids": ["B1"],
+      "note": "<只作观众的顾虑；由哪条边界收住，片中不承诺什么>"
     }
   ]
 }
