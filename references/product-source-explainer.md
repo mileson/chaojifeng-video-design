@@ -2,7 +2,7 @@
 
 目录：适用与入口 · 总流程 · 源码调研 · 事实账本 · 侧重点映射 · 口径边界 · 取证 · 叙事与章节 · 开场钩子 · 旁白、字幕与时间 · 声音 · 验收与登记 · 实战要点 · 与其他方法的关系
 
-配方 `product-source-explainer`，名称“源码说明片”，别名“源码驱动产品宣传”“产品源码说明片”。所属场景 `product-promo`，视觉语法沿用[极简左右讲解](../templates/product-split-explainer.md)，工作单见[源码说明片模板](../templates/product-source-explainer.md)。
+配方 `product-source-explainer`，名称“源码说明片”，别名“源码驱动产品宣传”“产品源码说明片”。所属场景 `product-promo`，视觉语法沿用[极简左右讲解](../templates/product-split-explainer.md)，工作单见[源码说明片模板](../templates/product-source-explainer.md)；成片案例见 README 的[产品宣传片](../README.md#产品宣传片)。
 
 这是产品宣传的第三种入口：用户给的是**产品本体**和**想强调的价值**，由 Agent 自己从源码里找事实、取证据、定叙事，做成一条让目标用户看懂“这个产品替我做什么”的说明片。参考素材入口给的是片子，模板名称入口给的是版式，本入口给的是产品和重点。
 

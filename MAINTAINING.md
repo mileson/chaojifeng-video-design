@@ -47,6 +47,21 @@ python3 -m unittest discover -s scripts -p test_gallery.py
 
 交互逻辑检查是隔离测试，不替代实际浏览器布局、播放和移动端验收；网站操作继续使用宿主要求的 Chrome 路由，安全策略阻断时保留未验证范围，不改用其他浏览器绕过。
 
+## 新增成片案例
+
+成片案例写在 README 的“创作案例”里，按表达方式分类，现有音乐视觉作品、说唱知识解说、音乐产品解说、产品宣传片。现有分类说不清再加新类，README 与 examples/showcase/README.md 同步建同名标题。
+
+1. 压缩：竖屏 720 × 1280 或横屏 1280 × 720，H.264 High、AAC，加 faststart，保留原声。从 `-preset slow -crf 24`、音频 96 kbps 起步，每条不超过 8 MB；GitHub 原生播放器对免费账号的附件上限是 10 MB，超出无法上传。小字看不清时降 CRF，不放大尺寸。第一帧就是播放器里的封面，要选有内容的画面。
+2. 入库：视频放进 examples/showcase/，在 manifest.json 登记来源文件名与哈希、输出文件、字节数、时长、尺寸、编码和检查状态；没有人完整看过或听过的，如实写 not_run。
+3. 上传：在议题或评论编辑框里上传同一个文件，取得 `https://github.com/user-attachments/assets/…` 链接，单独成行写进两处 README，并记入 manifest 的 github_video_attachment；与句子混排时只显示为链接。下载附件，核对哈希与入库文件一致。
+   - 浏览器没有登录 GitHub 时，用 gh：先看 `gh issue create --help` 里有没有 `--attach`（2.92.0 没有，2.103.3 实测可用），再建一个临时议题 `gh issue create --repo <owner/repo> --title upload --body-file body.md --attach film.mp4`，从议题正文取出链接。
+   - 临时议题可以删除（`gh issue delete <编号> --yes`，需要仓库管理权限）；2026-11-06 实测，议题删除后附件仍可下载，删除前后各下载一次核对哈希即可。
+4. 检查：`python3 -m unittest discover -s scripts -p test_showcase.py` 核对体积预算、清单哈希、链接和分类标题；推送后打开 GitHub 页面，确认播放器出现。
+
+```sh
+ffmpeg -i film.mp4 -vf "scale=720:1280:flags=lanczos,format=yuv420p" -c:v libx264 -preset slow -crf 24 -profile:v high -r 25 -c:a aac -b:a 96k -ar 48000 -movflags +faststart examples/showcase/new-case.mp4
+```
+
 ## 导入或更新上游
 
 当前锁定 lemomo-ai/lemo-opuscar 的 `413a6bd6d78ebd3bdd5abaec9538a26867f890df`。先研究版本增量、许可证、兼容性与工作流差异，再修改导入器的固定版本与适配规则；不在普通制作时自动拉取 latest。

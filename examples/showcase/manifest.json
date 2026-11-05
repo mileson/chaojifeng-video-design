@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "published_date": "2026-10-20",
+  "updated_date": "2026-11-06",
   "repository": "https://github.com/mileson/chaojifeng-video-design",
   "media_license": "Videos for showcase only; excluded from repository MIT license. See README.md.",
   "tool": "FFmpeg (existing local installation)",
@@ -104,6 +105,55 @@
         "url": "https://github.com/user-attachments/assets/bced29b5-a55a-4f92-85a5-865c6730752a",
         "presentation": "native GitHub video player",
         "audio": true
+      }
+    },
+    {
+      "id": "yijianfa-intro",
+      "title": "一键发",
+      "creation_environment": "Cursor",
+      "cursor_conversation_id": "2ae729b7-c19c-4230-b957-3c3e7eedca84",
+      "source": {
+        "filename": "一键发介绍片.mp4",
+        "sha256": "d309afc03aea1bf00d4e77ae726689c1265dc7dc8154e8dee8c872f30d6b515a"
+      },
+      "segments": [
+        {
+          "source_in_seconds": 0,
+          "source_out_seconds": 74.6,
+          "output_start_seconds": 0
+        }
+      ],
+      "output": {
+        "file": "yijianfa-intro.mp4",
+        "sha256": "2f368a0013fb10745e2dea36a8110e7916aa09345fb22be2df7b1150feed09e8",
+        "bytes": 3771265,
+        "duration_seconds": 74.603,
+        "width": 720,
+        "height": 1280,
+        "frame_rate": "25/1",
+        "video_codec": "h264",
+        "audio_codec": "aac",
+        "faststart": true
+      },
+      "edits": [
+        "full length, no excerpt",
+        "downscale from 1080x1920 preserving aspect ratio",
+        "H.264/AAC encoding (CRF 24, preset slow)"
+      ],
+      "checks": {
+        "full_decode": "passed",
+        "audio_stream": "present",
+        "visual_review": "sampled_frames",
+        "subjective_listening": "not_run",
+        "continuous_playback_review": "not_run",
+        "boundary_visual_review": "sampled_first_and_last_frames"
+      },
+      "audio_provenance": "Narration: synthetic speech in the author's own voice. Music bed and UI sound effects: programmatically synthesized, no third-party music library.",
+      "github_video_attachment": {
+        "url": "https://github.com/user-attachments/assets/fed3445a-5270-4763-850a-0cdcd4f5d218",
+        "presentation": "native GitHub video player",
+        "audio": true,
+        "download_sha256_matches_output": true
       }
     }
   ]

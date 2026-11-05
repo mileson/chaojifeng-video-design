@@ -6,7 +6,7 @@
 
 ## 创作案例
 
-点击播放器观看，片段均保留原声。
+点击播放器观看，均保留原声。
 
 ### 音乐视觉作品
 
@@ -56,7 +56,17 @@ https://github.com/user-attachments/assets/d87f8264-0a95-40d6-adbb-4e7e0afa32d3
 
 22秒竖屏片段，将圆角滑动、九张批量处理与小卡环形展示串成一段。
 
-选段与创作来源见 [案例说明](examples/showcase/README.md)，音乐视觉作品的复用流程见 [音乐驱动三维世界](references/music-driven-world.md)。后续作品按表达方式补入对应分类，需要时再扩展新类。
+### 产品宣传片
+
+把产品的价值讲成一条完整的片子：先说出观众的麻烦，再揭晓产品，最后讲清怎么用。
+
+#### 一键发
+
+https://github.com/user-attachments/assets/fed3445a-5270-4763-850a-0cdcd4f5d218
+
+74.6秒完整竖屏成片，介绍一款装在 Chrome 里的内容发布扩展。开场先问“一份内容发好几个平台，是不是又费时又费力”，揭晓后依次讲一键发布多个平台、在公众号、飞书和 X 之间搬文章、用发布空间分开管理多个账号。方法见 [源码说明片](references/product-source-explainer.md)。
+
+选段、成片与创作来源见 [案例说明](examples/showcase/README.md)，音乐视觉作品的复用流程见 [音乐驱动三维世界](references/music-driven-world.md)。后续作品按表达方式补入对应分类，需要时再扩展新类。
 
 ## 开源集成的 59 套影片风格
 
@@ -293,7 +303,7 @@ Agent 会根据已有项目和工具选择实现方式。此仓库包含创作�
 | 声画 | 整稿一次合成旁白，字幕、镜头切点和乐床闪避从同一份词级排程派生 |
 | 验收 | 逐章核对主张与证据是同一件事，手机尺寸可辨，文字扫描无制作身份标签；设计、预览、导出、听审、观众理解分别登记 |
 
-[产品宣传方法](references/product-promo-direction.md) · [极简左右讲解模板](templates/product-split-explainer.md) · [源码说明片方法](references/product-source-explainer.md) · [源码说明片模板](templates/product-source-explainer.md)
+[产品宣传方法](references/product-promo-direction.md) · [极简左右讲解模板](templates/product-split-explainer.md) · [源码说明片方法](references/product-source-explainer.md) · [源码说明片模板](templates/product-source-explainer.md) · [成片案例：一键发](#产品宣传片)
 
 ## 给一首歌，也能开始
 
