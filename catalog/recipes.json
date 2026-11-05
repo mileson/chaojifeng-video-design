@@ -2385,6 +2385,171 @@
       "source_relation": "2026-10-25用户确认从同一作品的制作及多轮返修提炼。配方与失败检查为原创归纳；同源会话不作独立成功样本，不分发私人对话、声音或工程，不继承旧片测量与接受状态。"
     },
     {
+      "id": "interview-commentary-explainer",
+      "name": "访谈解读",
+      "aliases": [
+        "超级峰解读",
+        "黄叔精读",
+        "Interview Commentary"
+      ],
+      "intent": "用冷开场引语抓住注意，揭示人物与来源，再用三段“原话、图解、本人判断”把外文访谈讲成中文解读，收尾给每类受众一个自检问题。",
+      "status": "guidance",
+      "tier": "完整影片模板",
+      "scenario_ids": [
+        "interview-commentary",
+        "knowledge-explainer",
+        "news-brief"
+      ],
+      "inputs": [
+        "已取得原声的访谈、演讲、播客或发布会素材",
+        "转写与可引用片段的时间",
+        "解读者自己的判断与证据等级",
+        "目标受众与对照问题"
+      ],
+      "required_inputs": [
+        "访谈来源、发布日期与可用的原声音轨",
+        "受众与他们的真实问题",
+        "解读者已有的相关判断与证据等级",
+        "画幅、时长与发布用途，可从项目补齐"
+      ],
+      "template_path": "templates/interview-commentary.md",
+      "method_path": "references/interview-commentary-direction.md",
+      "story_steps": [
+        {
+          "id": "cold-open-quote",
+          "shot_purpose": "先让观众听到访谈里最有冲突的一句原话",
+          "visual_action": "素材片段直接开场，保留原声；人物条短暂出现，双语字幕中文为主、英文为辅，右上角标注来源。",
+          "sound_role": "说话人原声为主，不用音乐盖住人声。",
+          "checks": [
+            "首帧可辨，前三秒听得到原话并读得到中文字幕。",
+            "引语完整，没有剪出相反的意思。"
+          ]
+        },
+        {
+          "id": "reveal-speaker-source",
+          "shot_purpose": "交代说话人凭什么值得听，以及这段话的出处",
+          "visual_action": "人物静帧缓推，名字卡与头衔逐项出现；随后来源卡显示缩略图、频道、标题与数据，并注明数据截止日期。",
+          "sound_role": "旁白一句话揭示人物，一句话交代出处与长度。",
+          "checks": [
+            "姓名、头衔、机构、日期与数据口径和来源一致。",
+            "来源署名始终可见。"
+          ]
+        },
+        {
+          "id": "roadmap-two-audiences",
+          "shot_purpose": "说明这段话与哪两类观众有关，并给出要听的三个问题",
+          "visual_action": "路线图卡逐项出现，当前项高亮、其余变暗，面向对象的标签依次出现。",
+          "sound_role": "旁白先交代语境与对象，再逐个说出三个问题。",
+          "checks": [
+            "三个问题观众能复述。",
+            "两类受众都被点到。"
+          ]
+        },
+        {
+          "id": "quote-card-judgement",
+          "shot_purpose": "每一段先听原话，再看拆解，再听解读者自己的判断",
+          "visual_action": "引语片段，接着人物静帧或纯色底上的解读图表与图形（圆环、环形任务图、重叠圆、雷达、趋势曲线、天平、等式、流程连线等随这句话的逻辑关系选择，没有合适图形时才用文字卡），同一时刻只出现一个；需要图解时可整屏盖住访谈画面，原声继续。",
+          "sound_role": "原声与旁白分时段，旁白用第一人称给判断，关键词与卡片元素同步出现。",
+          "checks": [
+            "每段引语后面都有解读。",
+            "图形或卡片结构对应这句话的逻辑结构。",
+            "第一人称事实有证据等级，没有编造的经历与案例。",
+            "引语合计不超过原片的三分之一。"
+          ]
+        },
+        {
+          "id": "self-check-close",
+          "shot_purpose": "让每类受众带走一个今天就能对照自己的问题",
+          "visual_action": "对照面板依次出现每类受众的自检问题，随后是一段固定的品牌落款（山峰波形加字标）；屏幕上不放评论邀请与行动号召。",
+          "sound_role": "完整尾句与自然淡出，不重复总结全文。",
+          "checks": [
+            "每个问题都能马上对照自己回答。",
+            "最后一个词与尾音没有被截断。"
+          ]
+        }
+      ],
+      "expression_ids": [
+        "knowledge.truth-ledger",
+        "knowledge.controlled-register",
+        "knowledge.evidence-board",
+        "narrative.output-as-proof",
+        "text.semantic-emphasis",
+        "text.read-then-move",
+        "sound.attention-mix",
+        "production.time-function",
+        "production.dwell-budget",
+        "production.capability-fallback"
+      ],
+      "motion_ids": [
+        "reveal",
+        "stagger",
+        "highlight",
+        "count",
+        "state-swap",
+        "camera-focus",
+        "hold"
+      ],
+      "style_ids": [
+        "dark-tech",
+        "opuscar-dark-keynote"
+      ],
+      "constraints": [
+        "引语总量不超过原片的三分之一，单段 5 到 30 秒；素材只在本地使用，不再分发原片。",
+        "对外文本全部过创作风格审计；英文行不使用破折号、冒号与分号；来源署名只作事实标注，格式为“频道名 访谈 · 年.月”，不带“素材 · ”前缀。",
+        "每条字幕句末不带标点，句中标点保留。",
+        "时间线以实际配音为准，图表与卡片元素用句内短语引用定时，口播改动后自动跟随。",
+        "本人音色与参考录音只用于授权的本人讲解，不进入公开示例；听感没有听审时保持 not_checked。",
+        "可执行流水线、脚本与已验证参数在 chaojifeng-interview-commentary，本配方只给设计合同。"
+      ],
+      "fallback": "素材或下载受限时改用用户提供或已授权的片段；缺少本地配音能力时交稿件、字幕与时间表并说明缺口；时长不足时保留冷开场、一段主体与收尾。",
+      "verification_questions": [
+        "每段引语后面是否都有解读，引语总量是否在三分之一以内？",
+        "图形或卡片结构是否对应这句话的逻辑结构，同一时刻是否只有一个？",
+        "每条第一人称事实是否有证据等级，有没有没依据的案例？",
+        "听感、观众理解是否如实登记为未验证？"
+      ],
+      "verification": {
+        "design": {
+          "status": "authored",
+          "evidence": []
+        },
+        "preview": {
+          "status": "partial",
+          "evidence": [
+            {
+              "environment": "macOS arm64；Playwright 无头 Chromium 渲染叠加层",
+              "scope": "第一期样例 25 个画面的抽帧联系表，目视检查字幕、卡片、遮挡与人脸位置",
+              "artifact": "第一期项目内的抽帧记录（项目内部，不随库分发）",
+              "note": "只覆盖抽样帧，没有逐帧观看"
+            }
+          ]
+        },
+        "exported": {
+          "status": "partial",
+          "evidence": [
+            {
+              "environment": "macOS arm64；ffmpeg 4.4.1；本地 Qwen3-TTS 与 Whisper",
+              "scope": "第一期样例成片 5 分 31 秒，1920×1080，25 fps；−16.0 LUFS，真峰值 −1.4 dBFS；口播回听汉字错误率 0.015；引语字幕召回 0.966",
+              "artifact": "第一期项目内的成片 interpretation-andrew-ng-v1.mp4（不随库分发）",
+              "note": "听感与观众理解没有验证"
+            },
+            {
+              "environment": "macOS arm64；ffmpeg 4.4.1；本机 ACE-Step 1.5；Playwright 无头 Chromium 渲染叠层；Whisper 抽窗回听",
+              "scope": "第三期（v3）成片 5 分 25 秒（324.7 秒），1920×1080，25 fps；−16.1 LUFS，真峰值 −1.4 dBFS；图形画面占 77.1%，最长纯访谈段 13.96 秒；叠层 122 段全部在位；铺底相对人声（300 Hz 到 3 kHz 强语音帧）均值 −30.2 dB；抽窗回听 28 处汉字错误率 0.009",
+              "artifact": "第三期项目内的成片 interpretation-andrew-ng-v3.mp4（不随库分发）",
+              "note": "只有工具实测：没有人耳听过铺底、音效与旁白，用户尚未验收；音效密度每分钟 15.9 个，高于第二期口径；ACE 生成内容的商用授权只是厂方声明，未逐项核实；曲线与图形只画走向，不是真实数据"
+            }
+          ]
+        }
+      },
+      "source_refs": [
+        "references/interview-commentary-direction.md",
+        "templates/interview-commentary.md",
+        "chaojifeng-interview-commentary 技能（完整样例与脚本，含第三期的图表场景与 ACE 声音流水线）"
+      ],
+      "source_relation": "依据 2026-11-05 第一期实际制作（Economist 对吴恩达的访谈，原片 7 分 06 秒，成片 5 分 31 秒）和用户提供的三条参考解读视频的形式观察提炼；同日第三期（v3）按用户的反馈改为图表优先、本机 ACE 生成铺底与音效、字幕句末不带标点、去掉“素材 · ”前缀、收尾不放评论邀请并增加可复用的品牌落款，用户尚未验收。不分发原始素材、参考片与本人声音，不把单期结果外推为整类验证。"
+    },
+    {
       "id": "product-split-explainer",
       "name": "极简左右讲解",
       "aliases": [
@@ -2514,6 +2679,232 @@
         "references/sources.md"
       ],
       "source_relation": "依据用户提供的产品宣传创作对话、参考片和迭代结果观察，按 2026-10-29 用户确认提炼；不分发私有原始素材，不将抽帧或来源成片状态视为本模板已渲染或跨产品验证。"
+    },
+    {
+      "id": "product-source-explainer",
+      "name": "源码说明片",
+      "aliases": [
+        "Source-Driven Product Explainer",
+        "源码驱动产品宣传",
+        "产品源码说明片"
+      ],
+      "intent": "从产品源码和用户给的选题侧重点出发，核实事实、取得当前版本的真实证据，做成按侧重点分章、首尾回扣的说明类产品宣传片。",
+      "status": "guidance",
+      "tier": "完整影片模板",
+      "scenario_ids": [
+        "product-promo",
+        "product-demo"
+      ],
+      "inputs": [
+        "产品源码目录，含平台、版本、对外名称与目标用户",
+        "选题侧重点：用户想强调的几项价值，顺序即优先级",
+        "当前版本可运行的真实界面，或可核对的官方素材",
+        "画幅、声音与时长要求，可从产品补齐；本人音色仅在用户明确指定时使用"
+      ],
+      "required_inputs": [
+        "产品源码目录，含平台、版本、对外名称与目标用户",
+        "选题侧重点：用户想强调的几项价值，顺序即优先级",
+        "当前版本可运行的真实界面，或可核对的官方素材"
+      ],
+      "entry_modes": [
+        {
+          "id": "source",
+          "name": "提供产品源码与选题侧重点",
+          "method": "读取源码建立事实账本，把侧重点映射成章节，按证据阶梯取得当前版本的真实证据，再用极简左右讲解的视觉语法制作。"
+        }
+      ],
+      "template_path": "templates/product-source-explainer.md",
+      "method_path": "references/product-source-explainer.md",
+      "story_steps": [
+        {
+          "id": "opening-emphasis-result",
+          "shot_purpose": "让观众先看见用户最看重的那个结果",
+          "visual_action": "排在首位的侧重点所对应的完成结果先出现，再引出产品名与一句价值；首幕独立构图。",
+          "sound_role": "旁白用一句话说出所得，乐床轻起。",
+          "checks": [
+            "首帧可辨，前三秒有所得；开场的结果在对应章节兑现。"
+          ]
+        },
+        {
+          "id": "emphasis-chapter",
+          "shot_purpose": "一章证明一项侧重点",
+          "visual_action": "标题给出对外说法，证据按前态、操作、结果连续展开，需要时局部放大；章节时长随侧重点权重和证据厚度分配。",
+          "sound_role": "旁白讲价值，画面证明；字幕与切点来自同一份词级排程。",
+          "checks": [
+            "每条口播主张在画面上有同一件事的证据；证据来自当前版本的运行或已核对的素材。"
+          ]
+        },
+        {
+          "id": "beyond-emphasis",
+          "shot_purpose": "可选：一句话带过侧重点之外的能力",
+          "visual_action": "不独立成章，用已有证据的画面快速带过，不引入新的未证实主张。",
+          "sound_role": "语速不变，不增加新信息。",
+          "checks": [
+            "不出现账本里 unknown 或不成立的事实。"
+          ]
+        },
+        {
+          "id": "brand-close",
+          "shot_purpose": "回收成果与产品记忆",
+          "visual_action": "回到开场的成果，产品名与一句有事实支撑的品牌句落定；明确转化目标时才加入已核实入口。",
+          "sound_role": "完整尾句、尾音和自然淡出。",
+          "checks": [
+            "回应开场，画面停留足够；不截断最后发声，不突然黑屏。"
+          ]
+        }
+      ],
+      "expression_ids": [
+        "narrative.output-as-proof",
+        "narrative.goal-proof",
+        "camera.focus-frame",
+        "visual.target-callout",
+        "text.read-then-move",
+        "sound.attention-mix",
+        "production.dwell-budget",
+        "production.capability-fallback"
+      ],
+      "motion_ids": [
+        "reveal",
+        "highlight",
+        "state-swap",
+        "camera-focus",
+        "hold"
+      ],
+      "style_ids": [
+        "product-minimal"
+      ],
+      "constraints": [
+        "源码确认事实与限制，镜头来自真实运行的结果；每条口播主张都对应账本里已核实且可对外的事实。",
+        "侧重点是约束：章节、时长和证据向侧重点倾斜，其余能力最多一句话带过；不成立的侧重点收窄或告知，不编造。",
+        "证据按阶梯取：重建的界面进成片前须与真实证据对照，不凭空绘制；取证不触发真实发布、支付或删除，先脱敏再入库。",
+        "旁白整稿一次合成；字幕、切点与闪避从同一份词级排程派生；本人音色只在用户明确指定时使用。",
+        "账本、工作单与取证原图留在内部，对外文字、文件名和音轨不加制作身份标签。"
+      ],
+      "fallback": "源码读不全或产品无法运行时，缩小到已核实且有证据的价值，取不到的证据就降低主张；保留账本与缺口说明，不把方案当成成片。",
+      "verification_questions": [
+        "每个侧重点是否有章节，或已告知为何收窄或不成立？",
+        "每条口播主张是否有同一件事的真实证据，证据在哪一层？",
+        "有没有触碰账本里的口径边界，或让个人信息出现在画面、字幕和文件名里？",
+        "手机尺寸下主操作与结果是否可辨，首尾是否回扣？"
+      ],
+      "verification": {
+        "design": {
+          "status": "authored",
+          "evidence": []
+        },
+        "preview": {
+          "status": "not_run",
+          "evidence": []
+        },
+        "exported": {
+          "status": "not_run",
+          "evidence": []
+        }
+      },
+      "source_refs": [
+        "references/product-source-explainer.md",
+        "templates/product-source-explainer.md",
+        "references/sources.md"
+      ],
+      "source_relation": "依据用户于 2026-11-05 指向的 Kimi Code 产品说明片创作会话（参考片风格、源码调研、真实界面取证、产品代言人口吻、单一排程字幕、同曲乐床闪避等迭代要求）和 2026-10-29 已沉淀的极简左右讲解归纳；账本、证据阶梯与检查脚本为本库的原创整理。不分发私有会话、原始素材、个人声音或项目路径，不将来源会话的成片状态视为本配方已渲染或跨产品验证。"
+    },
+    {
+      "id": "water-liquid",
+      "name": "水与液体构建",
+      "aliases": [
+        "液体构建",
+        "水的构建方法",
+        "Liquid Construction"
+      ],
+      "intent": "按元素、表现重点与镜头尺度构建水、咖啡、茶、雨水等液体的形态、光泽、运动与交互。",
+      "status": "guidance",
+      "tier": "物体形象构建配方",
+      "scenario_ids": [],
+      "style_ids": [],
+      "motion_ids": [],
+      "expression_ids": [],
+      "method_path": "objects/water-liquid/METHOD.md",
+      "engineering_path": "objects/water-liquid/ENGINEERING.md",
+      "template_path": "templates/liquid-construction.md",
+      "inputs": [
+        "液体元素及表现重点",
+        "尺度、边界、相机与照明",
+        "已有工程、素材、引擎与主计划"
+      ],
+      "story_steps": [
+        {
+          "id": "identify",
+          "shot_purpose": "确定液体在镜头中的作用",
+          "visual_action": "明确元素、表现重点、尺度、边界与观众必须看见的变化",
+          "sound_role": "确定液体声音是否承担叙事，不自动添加音效",
+          "checks": [
+            "镜头意图与构建路线匹配"
+          ]
+        },
+        {
+          "id": "construct",
+          "shot_purpose": "建立可信的形态、光泽与运动",
+          "visual_action": "依次构建空间边界、多尺度运动、反射折射与厚度响应",
+          "sound_role": "必要声音沿主计划事件，不另建时钟",
+          "checks": [
+            "轮廓、光学、接触与运动协调"
+          ]
+        },
+        {
+          "id": "interact",
+          "shot_purpose": "让变化与接触原因一致",
+          "visual_action": "将波纹、水花、泡沫、湿润和漂浮连接到统一事件",
+          "sound_role": "入水与流动声音按实际落点编排",
+          "checks": [
+            "事件连续且无明显穿插"
+          ]
+        },
+        {
+          "id": "verify",
+          "shot_purpose": "完成可重复的镜头表现",
+          "visual_action": "核相同初态重放、关键连续片段、参数联动与真实输出",
+          "sound_role": "按本片要求听审，静音镜头不强加声音",
+          "checks": [
+            "未检查项不登记通过"
+          ]
+        }
+      ],
+      "constraints": [
+        "元素级方法不覆盖已有整片配方，不建立第二条时间线。",
+        "开放液面、有限液面、附着液滴、液流与混合分别选择实现。",
+        "尺度、边界、光学、运动与接触联动调整，不能只换颜色。",
+        "方法指导与实际实现、渲染、导出及视觉验收分开。",
+        "开放海面先加载可执行配方与参数预设，运行结果不自动继承视觉验收。"
+      ],
+      "fallback": "先验证关键镜头；缺失的形变、交互或光学能力须补齐实现，确有阻塞时保存工程并报告未完成项，不自行降低已确定的效果目标。",
+      "verification_questions": [
+        "液体是否服务当前内容和镜头？",
+        "形态、光泽、运动和边界是否协调？",
+        "参数与时间状态能否恢复？",
+        "实际连续片段是否兑现表现重点？"
+      ],
+      "verification": {
+        "design": {
+          "status": "authored",
+          "evidence": []
+        },
+        "preview": {
+          "status": "not_run",
+          "evidence": []
+        },
+        "exported": {
+          "status": "not_run",
+          "evidence": []
+        }
+      },
+      "source_refs": [
+        "references/object-construction.md",
+        "objects/water-liquid/METHOD.md",
+        "objects/water-liquid/ENGINEERING.md"
+      ],
+      "source_relation": "本库按元素、表现重点与镜头尺度组织构建方法；开放海面有独立实现与参数预设，其他液体按各自方法选择实现。运行、画面与参考质量分别验证。",
+      "implementation_path": "objects/water-liquid/OCEAN.md",
+      "quality_path": "objects/water-liquid/QUALITY.md"
     }
   ]
 }

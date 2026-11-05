@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "name": "Open ocean / short wind waves",
+  "seed": 14,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "duration_seconds": 3
+  },
+  "render": {
+    "preview_percentage": 25,
+    "preview_samples": 12,
+    "native_samples": 32,
+    "threads": 4,
+    "max_bounces": 6,
+    "transmission_bounces": 4,
+    "max_clip_frames": 24
+  },
+  "grid": {
+    "points": 241,
+    "extent_m": 8000,
+    "center_spacing_scale_m": 6,
+    "bottom_depth_m": 40
+  },
+  "ocean": {
+    "resolution": 9,
+    "spatial_size_m": 100,
+    "wind_m_s": 12,
+    "wave_scale": 1.8,
+    "smallest_wave_m": 0.6,
+    "choppiness": 0.5,
+    "alignment": 0.35,
+    "direction_rad": 0.6,
+    "depth_m": 50,
+    "time_origin_s": 1,
+    "time_speed": 1
+  },
+  "medium": {
+    "amplitude_m": 0.24,
+    "wavelengths_m": [
+      2,
+      3.5,
+      6
+    ],
+    "direction_rad": 0.4,
+    "fade_distance_m": 55
+  },
+  "micro": {
+    "scale_per_m": 1.8,
+    "strength": 0.3,
+    "distance_m": 0.12,
+    "time_speed": 0.15
+  },
+  "water": {
+    "surface_color": [
+      0.55,
+      0.8,
+      0.85
+    ],
+    "roughness": 0.09,
+    "ior": 1.333,
+    "transmission": 1,
+    "absorption_color": [
+      0.35,
+      0.62,
+      0.66
+    ],
+    "absorption_density": 0.035
+  },
+  "lighting": {
+    "sun_elevation_deg": 18,
+    "sun_azimuth_deg": 92,
+    "sun_energy": 1.2,
+    "sun_angle_deg": 2,
+    "sky_strength": 0.16,
+    "cloud_coverage": 0.16,
+    "cloud_brightness": 0.65
+  },
+  "camera": {
+    "start": [
+      0,
+      -12,
+      5
+    ],
+    "end": [
+      2,
+      -9,
+      5.5
+    ],
+    "target_start": [
+      0,
+      25,
+      0
+    ],
+    "target_end": [
+      0,
+      27,
+      0
+    ],
+    "lens_mm": 36
+  },
+  "safety": {
+    "clearance_m": 0.8,
+    "max_wave_height_m": 5,
+    "horizon_edge_pixels": 3,
+    "max_frame_seconds": 90
+  }
+}

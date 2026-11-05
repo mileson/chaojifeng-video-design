@@ -66,3 +66,7 @@ python3 scripts/import_opuscar.py --source /path/to/inspected-checkout
 新增场景、动效、表达与配方沿用 [扩展合同](references/extension.md) 和 [计划合同](references/plan-contract.md) 的现有数据接口；复用稳定 ID、参数单位、能力、冲突、回退及证据字段。它们与风格按语义组合，不为一次参考效果新增近义目录或强制引擎。
 
 修改接口后回归旧计划、外置风格加载、名称冲突、依赖循环、路径边界和证据隔离；实际引擎和导出测试按变更风险选择，资源密集任务串行。
+
+## 物体形象构建配方
+
+按 [构建方法合同](references/object-construction.md) 扩展，复用 recipes 目录与查询入口。每项说明元素、表现重点、尺度、形态边界、工程选择、参数联动、演化路径与验收；方法在对象目录，镜头构建卡在 templates。配方正文围绕构建动作、决策依据与验收展开。新方法不改变旧计划必填字段，概念推导与实际实现分别验证。

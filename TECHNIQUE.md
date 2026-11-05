@@ -46,3 +46,7 @@
 ## 音乐驱动三维世界
 
 给音乐、主题、风格时按 [专项流程](references/music-driven-world.md) 复用 `music_world.py` 与 `assets/music-world/starter`。分析只产候选，编排与主题适配由当前Agent完成；两条起步路线分别实测，不把源码存在当作已生成成片。
+
+## 物体形象构建
+
+内容需要具体物体或现象时，按 [构建方法入口](references/object-construction.md) 选择元素级配方。水与液体按形态、光学、运动、接触和镜头关系构建；先读 [设计方法](objects/water-liquid/METHOD.md)，再按需读 [工程实现与复刻](objects/water-liquid/ENGINEERING.md)。沿已有项目选择实现，复用主计划、执行绑定与实际验收，不以方法存在代表能力已经可用。

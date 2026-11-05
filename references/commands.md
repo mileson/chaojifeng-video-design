@@ -20,6 +20,9 @@ python3 SKILL_ROOT/scripts/catalog.py --kind recipe list --scenario music-visual
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe get product-task-proof
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe list --scenario product-promo
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 极简左右讲解 --json
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 源码说明片 --json
+python3 SKILL_ROOT/scripts/product_ledger.py init /path/to/product-source --out /project/video/ledger.json
+python3 SKILL_ROOT/scripts/product_ledger.py check /project/video/ledger.json --source /path/to/product-source --evidence-root /project/video --script /project/video/narration.txt
 python3 SKILL_ROOT/scripts/production_tools.py list --task environment
 python3 SKILL_ROOT/scripts/production_tools.py probe
 python3 SKILL_ROOT/scripts/production_tools.py polyhaven-search --query studio --type hdris --limit 5 --cache-dir /project/video/cache/polyhaven
@@ -43,4 +46,17 @@ python3 SKILL_ROOT/scripts/explainer_timing_audit.py /project/video/knowledge-mu
 
 ## 产品宣传模板
 
-`recipe get` 支持稳定 ID、精确中文名称和登记别名；英文忽略大小写，前后空白忽略。名称冲突时返回候选 ID，未知名称报错，不做模糊套用。`product-promo` 下首个模板为“极简左右讲解”（`product-split-explainer`）；加载返回的模板与方法路径，再开始制作。
+`recipe get` 支持稳定 ID、精确中文名称和登记别名；英文忽略大小写，前后空白忽略。名称冲突时返回候选 ID，未知名称报错，不做模糊套用。`product-promo` 下首个模板为“极简左右讲解”（`product-split-explainer`），源码入口模板为“源码说明片”（`product-source-explainer`）；加载返回的模板与方法路径，再开始制作。
+
+`product_ledger.py` 只读源码目录，不执行项目代码、不联网：`init` 调研名称、版本及出处、平台、文档、视觉资产与限制线索，写出账本骨架（线索只是候选，需回原文核对）；`check` 检查事实、侧重点、证据、章节与口播主张是否闭合，来源文件与行号是否存在，稿件有没有出现边界禁用词。退出码 0 为闭合，1 为有未闭合项，2 为输入错误。检查不能判断事实是否正确，也不替代真实运行取证。
+
+## 物体形象构建配方
+
+```sh
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 水与液体构建
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe list --query 咖啡
+```
+
+元素级配方按对象、表现重点与镜头尺度匹配，不覆盖整片叙事配方。读取返回的 method_path、engineering_path 和 template_path；是否可运行、是否符合画面要求由项目实际验证。
+
+开放海面已提供参数化实现入口，按 [开放海面构建配方](../objects/water-liquid/OCEAN.md) 核实环境、构建、渲染代表帧和连续片段。它执行本地 Blender，与本页只读目录查询不同；串行运行并在输出目录保存实际参数及测量。

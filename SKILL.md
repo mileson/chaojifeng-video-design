@@ -1,6 +1,6 @@
 ---
 name: chaojifeng-video-design
-description: 设计和制作产品宣传（参考素材或模板名称两种入口）、产品演示、知识讲解（含 Rap／说唱）、资讯、图片成片、故事、功能动效、品牌短片与音乐视觉视频。支持选择或扩展视频风格、组合动效、强化前三秒、素材调度、音乐编排、参考片研究和局部修改；从导演意图到可编辑计划、制作、审片及可播放成片，也可只交方案或分镜。模型与引擎中立，按任务加载风格包和技术能力。
+description: 设计和制作产品宣传（参考素材或模板名称两种入口）、产品演示、知识讲解（含 Rap／说唱）、外文访谈解读、资讯、图片成片、故事、功能动效、品牌短片与音乐视觉视频。支持选择或扩展视频风格、组合动效、强化前三秒、素材调度、音乐编排、参考片研究和局部修改；从导演意图到可编辑计划、制作、审片及可播放成片，也可只交方案或分镜。模型与引擎中立，按任务加载风格包和技术能力。
 ---
 
 # 超级峰的视频设计方法论
@@ -19,14 +19,17 @@ description: 设计和制作产品宣传（参考素材或模板名称两种入�
 | 要解决的问题 | 读取与动作 |
 | --- | --- |
 | 故事、镜头、声音、观众变化 | [DIRECTOR.md](DIRECTOR.md)，再按 [任务路由](references/task-routing.md) 加载相关方法 |
-| 产品宣传、参考片套用或按模板名称制作 | 先读 [产品宣传视频](references/product-promo-direction.md)；参考素材先拆首幕、主体和尾幕，模板名称精确查询配方；“极简左右讲解”加载 [完整模板](templates/product-split-explainer.md)，连续完成声画制作与实际验收 |
+| 产品宣传、参考片套用、按模板名称制作，或给产品源码和选题侧重点 | 先读 [产品宣传视频](references/product-promo-direction.md)；参考素材先拆首幕、主体和尾幕，模板名称精确查询配方；“极简左右讲解”加载 [完整模板](templates/product-split-explainer.md)；给了产品源码目录和侧重点时读 [源码说明片](references/product-source-explainer.md)，配方 `product-source-explainer`（名称“源码说明片”，别名“源码驱动产品宣传”“产品源码说明片”）加载 [完整模板](templates/product-source-explainer.md)，先建事实账本、按证据阶梯取真实证据，渲染、取证与编码的工程细节读 [真实界面成片工程](references/real-ui-film-engineering.md)；均连续完成声画制作与实际验收 |
+| 把外文访谈、演讲或播客解读成中文视频，或复刻“引语 + 卡片 + 本人判断”形式 | 先读 [访谈解读](references/interview-commentary-direction.md)；配方 `interview-commentary-explainer`（名称“访谈解读”，别名“超级峰解读”“黄叔精读”）加载 [完整模板](templates/interview-commentary.md)；选题、下载、转写、配音、渲染、封面的可执行流水线用 `chaojifeng-interview-commentary`（画面以图表为主，铺底与音效默认用本机 ACE 生成，收尾用固定的品牌落款）；本人音色只用于授权的本人讲解，听感未听审保持 `not_checked` |
 | 给歌曲设计音乐视频，包括未指定主题或风格 | 先读 [歌曲视觉导演](references/song-visual-direction.md)、[声画事件模型](references/music-event-model.md)和[音乐镜头与运动编排](references/music-shot-choreography.md)，有演唱先取得歌词时间线，再用[音乐导演编排模板](templates/music-direction.md)或已有计划落实多层声音锚点、事件前后变化、视线与运镜、动作峰值、空间材质及实际感知验收 |
 | 匹配剪辑、动作接力或音乐转场 | 读 [匹配剪辑与音乐转场](references/match-cut-relay.md)，在现有事件卡明确出镜／入镜状态、共同含义、动作阶段与落定；由统一排程驱动代码实现，预演并核对实际切口 |
 | 有旁白、歌词或需要字幕 | 读 [字幕导演与配色](references/subtitle-direction.md)，在分镜阶段确定语言、语义分组、场景锚点、视线接力、阅读窗和音乐落点，优先探索空间文字与动态排版，保留固定字幕选项 |
 | 需要生成旁白，或缺少转写、音乐理解、人声分离能力 | 按 [音频能力检测与按需安装](references/audio-capability-setup.md) 独立选择 Qwen3-TTS、Whisper、ACE-Step 1.5 或 HTDemucs；本地参考音色配音读 [Qwen 配音接入](references/qwen3-tts-narration.md)，先复用环境，缺项由 Agent 按平台、资源与任务授权下载、安装和短样验证 |
+| 定旁白的音色、语速、激情感、配乐与音效取向，或用户反馈配音单调、偏慢、没劲 | 先读 [讲解配音的声音方向](references/narration-voice-direction.md)：超级峰自己的作品默认用其授权的本人声音，语速偏快、有起伏，配乐托住人声，音效落在情绪点；先量旧版基线再定数字目标，分段多取样择优，画面按口播起止重定时；回听只证字准，激情、像不像本人和节奏卡点保持 `not_checked`；授权与状态读 [讲解导演](references/explainer-narration.md)，本机配音读 [Qwen 配音接入](references/qwen3-tts-narration.md) |
 | 选择、变体、借用或新增风格 | 用 [风格画廊](assets/gallery/index.html) 看画面、来源样片与并排对比；按 [风格包合同](references/style-pack-contract.md) 精确查询 ID／中文名／英文名，只读选中包的 STYLE.md 与其引用 |
 | 用三维世界呈现音乐 | 沿 music-event-performance 读取 [音乐驱动三维世界](references/music-driven-world.md)，复用分析工具与起步工程，内部检查后直接完成成片 |
 | 诗词、乐器与景物形成三维意象 | 沿音乐分支补读 [诗词音乐世界](references/poetry-music-world.md)，组织意象接力、运动时钟及人物与乐器接触 |
+| 内容中的物体或现象需要具体构建方法；水、咖啡、茶、雨水等液体的形态、光泽与变化 | 先读 [物体形象构建](references/object-construction.md)，按“元素＋表现重点＋镜头尺度”匹配配方；液体加载 [水与液体构建](objects/water-liquid/METHOD.md)，选型前必读方法与工程基线；液体为表现主体且无明确平面风格要求时默认三维构建，禁止先自选二维绕过工程要求；绑定实现能力；开放海面加载 [可执行配方](objects/water-liquid/OCEAN.md)，三维任务补读 [画质构建与排错](objects/water-liquid/QUALITY.md)，验证全程覆盖与目标原生质量，发现可见缺陷须返修 |
 | 工具、引擎、素材、实际制作 | [TECHNIQUE.md](TECHNIQUE.md)，能力探测后沿已有工程制作 |
 | 首次扩展、维护、导入与目录生成 | [MAINTAINING.md](MAINTAINING.md)，维护库与制作当前作品分别处理 |
 | 让计划落实到代码、检查实际状态或局部重做 | 读 [执行绑定与观测](references/execution-contract.md)，复用主计划 ID 和时间，绑定实现与依赖；从引擎回传实际状态，检查关键片段并按影响范围返修 |
@@ -39,6 +42,9 @@ python3 SKILL_ROOT/scripts/catalog.py --kind style list --scenario knowledge-exp
 python3 SKILL_ROOT/scripts/stylepacks.py resolve 中国水墨
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 极简左右讲解
 python3 SKILL_ROOT/scripts/catalog.py --kind recipe get knowledge-rap-explainer
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 访谈解读
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe get 源码说明片
+python3 SKILL_ROOT/scripts/product_ledger.py check /project/video/ledger.json --source /path/to/product-source
 python3 SKILL_ROOT/scripts/validate_plan.py /project/video/plan.json
 python3 SKILL_ROOT/scripts/check_delivery.py /project/video/plan.json /project/video/delivery.json --probe --require-video
 ```

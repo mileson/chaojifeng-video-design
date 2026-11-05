@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "product": {
+    "name": "<对外产品名，以界面或商店名称为准>",
+    "dir_name": "<源码目录名，与产品名相同可省略>",
+    "version": "<当前版本号>",
+    "version_source": "<清单或包配置的 path:line>",
+    "platforms": ["<平台>"],
+    "audience": "<目标用户>",
+    "positioning": "<一句话定位，取自产品自述>",
+    "positioning_source": "<path:line>",
+    "source_root": "<源码根目录>",
+    "surveyed_on": "<YYYY-MM-DD>"
+  },
+  "emphasis": [
+    {
+      "id": "E1",
+      "user_phrase": "<用户原话>",
+      "public_phrase": "<对外说法，用产品自己的词>",
+      "viewer_gain": "<观众看完得到什么>",
+      "fact_ids": ["F01"],
+      "chapter_id": "ch1",
+      "status": "supported",
+      "note": "<narrowed 或 unsupported 必须写原因>"
+    }
+  ],
+  "facts": [
+    {
+      "id": "F01",
+      "statement": "<一句可核对的陈述>",
+      "sources": [{"path": "<相对源码根的路径>", "line": 1}],
+      "version": "<该事实适用的版本>",
+      "status": "verified",
+      "public": true,
+      "verified_by": ["source"],
+      "note": ""
+    }
+  ],
+  "boundaries": [
+    {
+      "id": "B1",
+      "kind": "membership",
+      "statement": "<不对外说或必须收窄的话>",
+      "reason": "<原因>",
+      "sources": [{"path": "<相对源码根的路径>", "line": 1}],
+      "avoid_terms": ["<稿件中不能出现的词>"]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "V01",
+      "kind": "run",
+      "level": 1,
+      "path": "<相对项目的素材路径>",
+      "how": "<怎么取：入口、命令、视口、倍率>",
+      "build": "<取证用的版本>",
+      "captured_on": "<YYYY-MM-DD>",
+      "fact_ids": ["F01"],
+      "shows": "<这份证据让观众看见什么>",
+      "privacy": "clean",
+      "status": "ready",
+      "in_film": true
+    }
+  ],
+  "chapters": [
+    {
+      "id": "ch1",
+      "role": "chapter",
+      "emphasis_id": "E1",
+      "claim_ids": ["C01"],
+      "evidence_ids": ["V01"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "<口播里的原句>",
+      "fact_ids": ["F01"],
+      "chapter_id": "ch1"
+    }
+  ]
+}

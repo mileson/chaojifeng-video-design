@@ -83,7 +83,8 @@
         "launch-film-arc",
         "feature-chapter-reel",
         "product-music-story",
-        "product-split-explainer"
+        "product-split-explainer",
+        "product-source-explainer"
       ],
       "expression_ids": [
         "narrative.shared-subject",
@@ -209,7 +210,8 @@
         "object-explainer",
         "layered-concept-reveal",
         "knowledge-music-explainer",
-        "knowledge-rap-explainer"
+        "knowledge-rap-explainer",
+        "interview-commentary-explainer"
       ],
       "expression_ids": [
         "narrative.follow-unit",
@@ -321,7 +323,8 @@
         "data-comparison",
         "evidence-board-brief",
         "layered-concept-reveal",
-        "knowledge-rap-explainer"
+        "knowledge-rap-explainer",
+        "interview-commentary-explainer"
       ],
       "expression_ids": [
         "visual.quantity-progress",
@@ -819,7 +822,8 @@
         "产品入口、平台版本和目标用户",
         "可核实的核心价值及实际功能",
         "已有真实界面、操作与结果素材；参考模式另给可读参考",
-        "发布用途、画幅与声音要求，可从项目补齐"
+        "发布用途、画幅与声音要求，可从项目补齐",
+        "产品源码目录与选题侧重点（源码入口，由 Agent 调研事实、取证并映射章节）"
       ],
       "required_inputs": [
         "产品入口、平台版本和目标用户",
@@ -832,7 +836,7 @@
         "把同一左右版式重复到底，遮蔽需要放大的证据。"
       ],
       "constraints": [
-        "参考素材与模板名称是两种输入入口，不替代 recipe/compose/free 编排方式。",
+        "参考素材、模板名称与产品源码是三种输入入口，不替代 recipe/compose/free 编排方式。",
         "首幕建立具体所得，主体证明主张，尾幕回到成果与产品；按实际音频安排时间。",
         "保持产品事实，制作和来源说明留内部，不添加无依据业绩或制作身份标签。"
       ],
@@ -875,14 +879,16 @@
         "hold"
       ],
       "minimum_acceptance": [
-        "两种入口可独立开始",
+        "三种入口可独立开始",
         "首尾两幕与主体承诺呼应",
         "每项主张有真实画面证据",
-        "按真实音频完成字幕与混音，观看听审分别记录"
+        "按真实音频完成字幕与混音，观看听审分别记录",
+        "源码入口的口播主张来自已核实事实，并有当前版本的同一件事证据"
       ],
-      "support_boundary": "支持由项目和素材提炼宣传片；模板为指导，不附带通用渲染器，不保证任意产品自动运行。",
+      "support_boundary": "支持由项目、源码和素材提炼宣传片；模板为指导，不附带通用渲染器，不保证任意产品自动构建或运行取证。",
       "recipe_ids": [
-        "product-split-explainer"
+        "product-split-explainer",
+        "product-source-explainer"
       ],
       "expression_ids": [
         "narrative.output-as-proof",
@@ -895,7 +901,108 @@
       ],
       "source_refs": [
         "references/product-promo-direction.md",
+        "references/product-source-explainer.md",
         "references/sources.md"
+      ]
+    },
+    {
+      "id": "interview-commentary",
+      "name": "访谈解读",
+      "intent": "听懂一段外文访谈里的关键判断，知道它对自己意味着什么，并带走一个可以马上对照自己的问题。",
+      "applicable_inputs": [
+        "已取得原声的访谈、演讲、播客或发布会素材",
+        "转写与可引用片段的时间",
+        "解读者自己的判断与证据等级",
+        "目标受众与对照问题"
+      ],
+      "counterexamples": [
+        "把几段引语拼成合集，没有解读者自己的判断。",
+        "引语占比过高，或剪出与原意相反的意思。",
+        "用没有证据的个人经历、客户案例和业绩数字撑场面。",
+        "没有人耳听过，却写音色已还原、自然度已验证。"
+      ],
+      "constraints": [
+        "引语是评论依据，总量不超过原片的三分之一，每段后面都有解读；保留否定、条件与语境，译文不扩大原话。",
+        "来源、日期与数据截止日期写在画面上；第一人称事实先登记证据等级，没有证据不写。",
+        "字幕中文为主、英文为辅；英文引语字幕是净化后的原话；英文行不使用破折号、冒号与分号；每条字幕句末不带标点。",
+        "画面默认用图表与图形，少用文字卡；屏幕上不放评论邀请与行动号召，署名格式为“频道名 访谈 · 年.月”。",
+        "本人音色只用于授权的本人讲解；回听转写只证明读对，听感没有人耳验证时保持 not_checked。",
+        "对外文本不带制作身份标签；来源署名属于事实标注，保留。"
+      ],
+      "fallback": "素材下载受限时改用用户提供或已授权的片段；配音能力缺失时交稿件与字幕时间并说明缺口；未听审不写像本人。",
+      "verification": {
+        "design": {
+          "status": "authored",
+          "evidence": []
+        },
+        "preview": {
+          "status": "not_run",
+          "evidence": []
+        },
+        "exported": {
+          "status": "not_run",
+          "evidence": []
+        }
+      },
+      "required_inputs": [
+        "访谈来源、发布日期与可用的原声音轨",
+        "受众与他们的真实问题",
+        "解读者已有的相关判断与证据等级",
+        "画幅、时长与发布用途，可从项目补齐"
+      ],
+      "narrative_options": [
+        "冷开场引语，揭示人物与来源，三段解读，自检收尾",
+        "单一主张深读：一段引语配多层解读",
+        "两位嘉宾观点对照"
+      ],
+      "layouts": [
+        "quote-clip",
+        "portrait-card",
+        "solid-card",
+        "closing-checklist"
+      ],
+      "style_ids": [
+        "dark-tech",
+        "opuscar-dark-keynote",
+        "paper-editorial",
+        "mono-diagram"
+      ],
+      "motion_ids": [
+        "reveal",
+        "stagger",
+        "highlight",
+        "count",
+        "state-swap",
+        "camera-focus",
+        "hold"
+      ],
+      "minimum_acceptance": [
+        "每段引语后面都有解读，引语总量与来源标注清楚",
+        "人名、头衔、日期、数据口径与来源一致",
+        "第一人称事实有证据等级，没有编造的经历与案例",
+        "字幕中文为主英文为辅，句末不带标点，图表或卡片跟随口播",
+        "回听、响度与画面抽帧有实际证据，听感单列",
+        "收尾给每类受众一个可对照自己的问题"
+      ],
+      "support_boundary": "支持有素材的访谈解读与图表、卡片化呈现；不承诺观众理解收益，不证明音色相似度，不替代对原话语境的人工核对。单期样片只证明该期与实际检查范围。",
+      "source_refs": [
+        "references/interview-commentary-direction.md",
+        "templates/interview-commentary.md"
+      ],
+      "recipe_ids": [
+        "interview-commentary-explainer"
+      ],
+      "expression_ids": [
+        "knowledge.truth-ledger",
+        "knowledge.controlled-register",
+        "knowledge.evidence-board",
+        "narrative.output-as-proof",
+        "text.semantic-emphasis",
+        "text.read-then-move",
+        "sound.attention-mix",
+        "production.time-function",
+        "production.dwell-budget",
+        "production.capability-fallback"
       ]
     }
   ]

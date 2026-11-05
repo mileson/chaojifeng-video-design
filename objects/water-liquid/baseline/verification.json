@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "purpose": "开放海面当前实现的固定条件回归基准，不代表参考质感等价",
+  "blender_version": "5.2.1 LTS",
+  "source_files": {
+    "build_ocean.py": "11db84ded9ed39b1054dcaef68d805659f63dc8f9303e040fa63312c2858e720",
+    "config.py": "c4bdfb2b4f151b59a0512a0e7204e6308258b7f035a7cc6f89f377dd37c1a819"
+  },
+  "source_bundle_sha256": "8cda07f81bcf3a47653a750d1ac1877ae550e96433b3f4eef0a470ebc14bbbde",
+  "configuration_sha256": "08ad03bec57e3fae7abe9012391e6aee6a1932b21bbfe308039c2f550e0369b3",
+  "render": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "frames": 24,
+    "device": [
+      {
+        "name": "Apple M5 Pro",
+        "type": "CPU",
+        "enabled": false
+      },
+      {
+        "name": "Apple M5 Pro (GPU - 16 cores)",
+        "type": "METAL",
+        "enabled": true
+      }
+    ],
+    "seconds": {
+      "total": 182.0797631671303,
+      "min": 6.570951125002466,
+      "median": 7.303164145996561,
+      "max": 12.841365833010059
+    }
+  },
+  "numeric": {
+    "status": "passed_same_machine",
+    "range": "72 sequential frames plus 72,1,36,24,1 rewind",
+    "state_includes": "geometry,camera,normal time,exposure"
+  },
+  "geometry": {
+    "frames_checked": 72,
+    "max_wave_height_m": 3.057530448153365,
+    "min_camera_clearance_m": 4.61086563325264,
+    "max_projected_edge_pixels": 2.4891617151266257,
+    "max_folded_triangles": 0
+  },
+  "image_repeat": {
+    "mean_absolute_channel_difference": 0.08001398533950617,
+    "maximum_channel_difference": 33.0,
+    "p99_channel_difference": 1.0,
+    "identical_pixels": false,
+    "scope": "same machine Blender5.2.1 Metal, independent rebuild, fixed configuration, frame1",
+    "reference_equivalence": false
+  },
+  "image_review": {
+    "status": "reviewed_with_limitations",
+    "evidence": [
+      "frame-001.png",
+      "contact.jpg"
+    ],
+    "limitations": [
+      "远景相对平坦",
+      "天空层次较弱",
+      "中波与微表面包含艺术近似"
+    ]
+  },
+  "continuous_review": {
+    "status": "partial",
+    "decode": "passed",
+    "real_time_viewing": "not_run",
+    "evidence": "ocean.mp4"
+  },
+  "reference_quality": "not_equivalent",
+  "unimplemented": [
+    "foam",
+    "shore",
+    "caustics",
+    "underwater",
+    "buoyancy"
+  ],
+  "assets": {
+    "ocean.mp4": "5d4af4137ecbeec7f5997927feb5599862f8a2ffa6b410dacf18f63fa6a199d7",
+    "measurements.json": "b14b25b786bdced7d78c4d9faab73947c647b23753835b223ac5e07181b53e47",
+    "frame-001.png": "7b6cab6bbe97385dc207a9aa6918c3dc0ba53b9ab56860e6304e0a375626b185",
+    "contact.jpg": "574e6ccd86b767cb60a84a965fc11aab970e23592810c5bdd242669c8e237b71",
+    "safety-tests.json": "f70094bf630f7d55cff76f61711510d6ec170f6dd633b997d99cbd7ab094cff1",
+    "preset.json": "01d9263108c8ac9496d0dac1c06fcc3c4ea56f8c502dc2074f05286586775ae2"
+  }
+}

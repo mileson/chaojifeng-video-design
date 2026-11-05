@@ -3,6 +3,7 @@ import contextlib
 import io
 import json
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 import catalog as cli
 
@@ -23,6 +24,27 @@ class CatalogNameTests(unittest.TestCase):
             status, result = self.run_cli(['--kind', 'recipe', 'get', value])
             self.assertEqual(status, 0)
             self.assertEqual(result['item']['id'], 'product-split-explainer')
+
+    def test_source_explainer_id_name_and_aliases(self):
+        for value in ['product-source-explainer', '源码说明片', '产品源码说明片', '源码驱动产品宣传', ' SOURCE-DRIVEN PRODUCT EXPLAINER ']:
+            status, result = self.run_cli(['--kind', 'recipe', 'get', value])
+            self.assertEqual(status, 0, value)
+            self.assertEqual(result['item']['id'], 'product-source-explainer', value)
+        status, result = self.run_cli(['--kind', 'recipe', 'get', '极简左右讲解'])
+        self.assertEqual(result['item']['id'], 'product-split-explainer')
+
+    def test_source_explainer_is_listed_and_its_files_exist(self):
+        for scenario in ('product-promo', 'product-demo'):
+            status, result = self.run_cli(['--kind', 'recipe', 'list', '--scenario', scenario])
+            self.assertEqual(status, 0)
+            self.assertIn('product-source-explainer', [x['id'] for x in result['items']], scenario)
+        status, result = self.run_cli(['--kind', 'recipe', 'get', '源码说明片'])
+        item = result['item']
+        root = Path(__file__).resolve().parents[1]
+        for key in ('template_path', 'method_path'):
+            self.assertTrue((root / item[key]).is_file(), key)
+        self.assertEqual([mode['id'] for mode in item['entry_modes']], ['source'])
+        self.assertTrue((root / 'templates' / 'product-ledger.json').is_file())
 
     def test_scenario_contains_template(self):
         status, result = self.run_cli(['--kind', 'recipe', 'list', '--scenario', 'product-promo'])

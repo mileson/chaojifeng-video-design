@@ -1,0 +1,31 @@
+[
+  {
+    "case": "nonempty",
+    "exit_code": 1,
+    "has_rendered_frames": false,
+    "manifest_present": true,
+    "latest_state_present": true,
+    "old_manifest_hash_unchanged": true
+  },
+  {
+    "case": "actual-wave",
+    "exit_code": 1,
+    "has_rendered_frames": false,
+    "manifest_present": true,
+    "latest_state_present": true
+  },
+  {
+    "case": "actual-camera",
+    "exit_code": 1,
+    "has_rendered_frames": false,
+    "manifest_present": true,
+    "latest_state_present": true
+  },
+  {
+    "case": "parameter-camera",
+    "exit_code": 1,
+    "has_rendered_frames": false,
+    "manifest_present": false,
+    "latest_state_present": false
+  }
+]
