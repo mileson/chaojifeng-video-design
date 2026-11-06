@@ -5,6 +5,15 @@
   "repository": "https://github.com/mileson/chaojifeng-video-design",
   "media_license": "Videos for showcase only; excluded from repository MIT license. See README.md.",
   "tool": "FFmpeg (existing local installation)",
+  "prompt_examples": {
+    "ink-landscape": "用 $chaojifeng-video-design，以【音乐文件】做一支水墨风格的三维音乐视频：墨点起势，穿过峡谷，随高潮拉升成山河。",
+    "porcelain-rain": "用 $chaojifeng-video-design，以【音乐文件】做一支烟雨风格的三维音乐视频：从青花器物的纹样走进烟雨山水，让乐句带动空间变化。",
+    "pipa-moon-river": "用 $chaojifeng-video-design，以【音乐文件】做一支诗词意象的三维音乐视频：月下拨弦，让水波、笔触与立体诗字依次接力，从留白走向爆发。",
+    "math-world": "用 $chaojifeng-video-design，以【音乐文件】做一支理论概念的三维音乐视频：穿越无穷符号，展开波形与公式，让三维对象随音乐表达数学关系。",
+    "ai-evolution-rap": "用 $chaojifeng-video-design 做一期关于【AI 发展史】的说唱科普视频：画面用“开机倒数、升级闯关”的母题，歌词、字幕和进度条跟着节拍逐关推进。",
+    "rounded-corner": "用 $chaojifeng-video-design，为【你的产品】做一条竖屏音乐产品视频：歌词围绕“边角变温柔”，依次演示圆角滑动、九张批量处理和小卡环形展示。",
+    "yijianfa-intro": "用 $chaojifeng-video-design 的“源码说明片”，读取【产品源码目录】，重点突出一键发布多个平台、内容搬运、支持多账号运营，开场先说观众的麻烦，再揭晓产品。"
+  },
   "items": [
     {
       "id": "rounded-corner",

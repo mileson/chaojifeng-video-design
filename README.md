@@ -6,65 +6,106 @@
 
 ## 创作案例
 
-点击播放器观看，均保留原声。
+点击播放器观看，均保留原声。每条视频下方附一句话指令，把【】换成你的素材，即可开始复刻。
 
 ### 音乐视觉作品
 
-四段音乐视觉作品，均为 15 秒高亮。
+四段音乐视觉作品，均为 15 秒高亮；诗词意象的做法见 [诗词音乐世界](references/poetry-music-world.md)。
 
-#### 水墨山河
+<table width="100%">
+<tr>
+<td width="25%" valign="top">
 
 https://github.com/user-attachments/assets/95b117d6-ba08-4714-9869-c0dc6b7cdab1
 
-墨点、峡谷与山河拉升，随《山河图》的节奏展开。
+**水墨山河**
 
-#### 青花烟雨
+用 $chaojifeng-video-design，以【音乐文件】做一支水墨风格的三维音乐视频：墨点起势，穿过峡谷，随高潮拉升成山河。
+
+</td>
+<td width="25%" valign="top">
 
 https://github.com/user-attachments/assets/de15cfd8-d5f6-4a2d-9d11-bf17b719cc8a
 
-从器物纹样穿入烟雨山水，让《青花瓷》的乐句带动空间变化。
+**青花烟雨**
 
-#### 琵琶江月
+用 $chaojifeng-video-design，以【音乐文件】做一支烟雨风格的三维音乐视频：从青花器物的纹样走进烟雨山水，让乐句带动空间变化。
+
+</td>
+<td width="25%" valign="top">
 
 https://github.com/user-attachments/assets/d585b421-229a-401b-8006-09e12e468305
 
-月下拨弦，让水波、笔触与立体诗字接力，从留白走向爆发。查看 [诗词音乐世界的方法](references/poetry-music-world.md)。
+**琵琶江月**
 
-#### 三维数学世界
+用 $chaojifeng-video-design，以【音乐文件】做一支诗词意象的三维音乐视频：月下拨弦，让水波、笔触与立体诗字依次接力，从留白走向爆发。
+
+</td>
+<td width="25%" valign="top">
 
 https://github.com/user-attachments/assets/dbc46343-0914-4c86-a258-c79100bd1997
 
-穿越无穷符号，展开波形与公式，让三维对象随音乐表达数学关系。
+**三维数学世界**
+
+用 $chaojifeng-video-design，以【音乐文件】做一支理论概念的三维音乐视频：穿越无穷符号，展开波形与公式，让三维对象随音乐表达数学关系。
+
+</td>
+</tr>
+</table>
 
 ### 说唱知识解说
 
 将知识主线写入说唱，用歌词、字幕和画面逐层展开。
 
-#### AI 闯关记
+<table>
+<tr>
+<td width="209" valign="top">
 
 https://github.com/user-attachments/assets/bced29b5-a55a-4f92-85a5-865c6730752a
 
-约18.6秒高亮，将开机倒数与“升级闯关”副歌串联，用闯关母题组织内容。
+**AI 闯关记**
+
+用 $chaojifeng-video-design 做一期关于【AI 发展史】的说唱科普视频：画面用“开机倒数、升级闯关”的母题，歌词、字幕和进度条跟着节拍逐关推进。
+
+</td>
+</tr>
+</table>
 
 ### 音乐产品解说
 
 让歌词、音乐与真实产品操作一起推进，呈现功能和使用结果。
 
-#### 小圆角
+<table>
+<tr>
+<td width="209" valign="top">
 
 https://github.com/user-attachments/assets/d87f8264-0a95-40d6-adbb-4e7e0afa32d3
 
-22秒竖屏片段，将圆角滑动、九张批量处理与小卡环形展示串成一段。
+**小圆角**
+
+用 $chaojifeng-video-design，为【你的产品】做一条竖屏音乐产品视频：歌词围绕“边角变温柔”，依次演示圆角滑动、九张批量处理和小卡环形展示。
+
+</td>
+</tr>
+</table>
 
 ### 产品宣传片
 
-把产品的价值讲成一条完整的片子：先说出观众的麻烦，再揭晓产品，最后讲清怎么用。
+把产品的价值讲成一条完整的片子：先说出观众的麻烦，再揭晓产品，最后讲清怎么用。收录的是一款 Chrome 内容发布扩展的 74.6 秒完整竖屏成片，方法见 [源码说明片](references/product-source-explainer.md)。
 
-#### 一键发
+<table>
+<tr>
+<td width="209" valign="top">
 
 https://github.com/user-attachments/assets/fed3445a-5270-4763-850a-0cdcd4f5d218
 
-74.6秒完整竖屏成片，介绍一款装在 Chrome 里的内容发布扩展。开场先问“一份内容发好几个平台，是不是又费时又费力”，揭晓后依次讲一键发布多个平台、在公众号、飞书和 X 之间搬文章、用发布空间分开管理多个账号。方法见 [源码说明片](references/product-source-explainer.md)。
+**一键发**
+
+用 $chaojifeng-video-design 的“源码说明片”，读取【产品源码目录】，重点突出一键发布多个平台、内容搬运、支持多账号运营，开场先说观众的麻烦，再揭晓产品。
+
+</td>
+</tr>
+</table>
 
 选段、成片与创作来源见 [案例说明](examples/showcase/README.md)，音乐视觉作品的复用流程见 [音乐驱动三维世界](references/music-driven-world.md)。后续作品按表达方式补入对应分类，需要时再扩展新类。
 
